@@ -29,22 +29,41 @@ class SessionForm extends React.Component {
       footerText = <p>Already have an account?</p >
     }
 
-    return(
-      <div>
-        <p>{this.props.formType}</p>
-        <p>{this.props.errors}</p>
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.update("username")} type="text" value={this.state.username}
-            placeholder="Username" />
-          <input onChange={this.update("password")} type="password" value={this.state.password}
-            placeholder="Password" />
-          <button>{ this.props.formType }</button>
-        </form>
+    let errors = Object.keys(this.props.errors).map(errorKey => {
+      return <p>{this.props.errors[errorKey]}</p>
+    })
 
-        <div>
-          {footerText}
-          {this.props.link}
+    return(
+      <div className="session">
+
+        <div className="session-form-logo-header">
+          <a href="/#">
+            <div className="black-logo"></div>
+            <p>Botify</p>
+          </a>
         </div>
+        <div className="session-form-wrapper">
+          <p>{this.props.formType}</p>
+          <div className="session-errors">{errors}</div>
+          <form onSubmit={this.handleSubmit}>
+            <input onChange={this.update("username")} type="text" value={this.state.username}
+              placeholder="Username" />
+            <input onChange={this.update("password")} type="password" value={this.state.password}
+              placeholder="Password" />
+            <button className="green-button green-button-session">{this.props.formType}</button>
+          </form>
+
+          <div className="form-footer">
+            {footerText}
+            {this.props.link}
+          </div>
+          
+          <div className="demo-login">
+            <a href="">Login as demo user</a>
+          </div>
+          
+        </div>
+
       </div>
     )
    

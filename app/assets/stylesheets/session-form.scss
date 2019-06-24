@@ -1,0 +1,91 @@
+.session-form-logo-header{
+    background-color: #fff;
+    display: block;
+    height: 60px;
+    padding: 20px 0 20px 0px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.session-form-logo-header a {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.black-logo{
+    background: image-url('logo-black.png') no-repeat center center;
+    background-size: contain;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    left: 15px;
+}
+.session-form-logo-header p {
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.07em;
+}
+
+.session-form-wrapper {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.session-form-wrapper p {
+    margin: 0 auto;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    font-size: 20px;
+}
+
+.session-form-wrapper, .session-form-wrapper form{
+    display: flex;
+    flex-direction: column;
+}
+
+.green-button-session {
+    padding: 10px 70px;
+    margin-bottom: 30px;
+}
+
+input {
+    height: 48px;
+    border: 1px solid #dfe0e6;
+    padding: 0 .75em;
+    margin-top: 10px;
+}
+
+.form-footer, .demo-login {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.form-footer p, .form-footer a{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.form-footer a, .demo-login a {
+    color: #1DB954;
+    font-weight: 600;
+}
+
+.form-footer a:hover{
+    color: #1ED760;
+    font-weight: 600;
+}
+
+.session-errors {
+    display:flex;
+    flex-direction: column;
+}
+
+.session-errors p {
+    color: red;
+    font-size: 12px;
+}

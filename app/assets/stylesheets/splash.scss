@@ -31,7 +31,7 @@
 
 }
 
-.splash-nav-links{
+.splash-nav-links {
     color: white;
     padding-top: 30px;
     font-weight: bold;
@@ -40,10 +40,10 @@
 .splash-nav-links a {
     padding: 10px;
 }
+
 .splash-nav-links a:hover {
     color: #1DB954;
 }
-
 
 .splash-text-content {
     display: flex;
@@ -73,7 +73,7 @@
     text-align: center;
 }
 
-.splash-text-content a {
+.green-button{
     margin: 0 auto;
     color: white;
     font-weight: 700;
@@ -83,8 +83,9 @@
     margin-top: 30px;
     font-size: 13px;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.splash-text-content a:hover {
+.green-button:hover {
     background-color: #1ED760;
 }

@@ -7,7 +7,7 @@ import React from 'react'
 const mapStateToProps = (state) => {
   return ({
     errors: state.errors.session,
-    formType: "signup",
+    formType: "Sign up",
     link: <Link to="/login">Log in</Link>
   })
 }

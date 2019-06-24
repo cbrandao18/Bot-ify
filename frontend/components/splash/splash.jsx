@@ -25,7 +25,7 @@ class Splash extends React.Component {
                 <div className="splash-text-content">
                     <h1>Music for <p>everyone</p> robots.</h1>
                     <h2>Millions of techno songs for the robots among us. No credit card needed.</h2>
-                    <a href="#/signup">GET BOTIFY FREE 🤖 </a>
+                    <a className="green-button" href="#/signup">GET BOTIFY FREE 🤖 </a>
                 </div>
             </div>
         )
