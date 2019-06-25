@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom';
 
 class SessionForm extends React.Component {
 
@@ -16,9 +17,17 @@ class SessionForm extends React.Component {
   }
  
   handleSubmit(e) {
-      e.preventDefault();
-      const user = Object.assign({}, this.state);
-      this.props.processForm(user);
+    e.preventDefault();
+    this.props.processForm(this.state).then(() => {
+      this.props.history.push('/browse/featured')
+    })
+  }
+
+  loginAsRobot(e) {
+    let action = this.props.formType === 'Sign up' ? this.props.loginDemo : this.props.processForm
+    action({ username: 'botuser', password: 'robots' }).then(() => {
+      this.props.history.push('/browse/featured')
+    })
   }
 
   render(){
@@ -59,7 +68,7 @@ class SessionForm extends React.Component {
           </div>
           
           <div className="demo-login">
-            <a href="">Login as demo user</a>
+            <a onClick={this.loginAsRobot.bind(this)}>Login as demo user</a>
           </div>
           
         </div>
@@ -70,4 +79,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

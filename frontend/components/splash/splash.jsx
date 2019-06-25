@@ -17,6 +17,9 @@ class Splash extends React.Component {
                         </a>
                     </div>
                     <div className="splash-nav-links">
+                        <span>Developed by: </span>
+                        <a href="https://github.com/cbrandao18">Christie Brandao</a>
+                        <span> | </span>
                         <a href="#/signup">Sign Up</a>
                         <a href="#/login">Login</a>
                     </div>
