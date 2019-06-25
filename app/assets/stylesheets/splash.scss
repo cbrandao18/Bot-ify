@@ -53,7 +53,21 @@
 
 .splash-text-content > h1 > p {
     display: inline;
-    text-decoration: line-through;
+}
+
+.strikeout {
+  position: relative;
+}
+
+.strikeout::after {
+  border-bottom: 0.140em solid rgba(242, 121, 53, 0.70);
+  content: "";
+  left: 0;
+  line-height: 1em;
+  margin-top: calc(0.050em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
 }
 
 .splash-text-content h1 {

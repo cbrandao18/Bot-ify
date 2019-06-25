@@ -8,7 +8,7 @@ const NavBar = ({ current_user, logout }) => {
                 
             </div>
             <div className="nav-bar-footer">
-                <p>{current_user.username}</p>
+                <p className="session-user">{current_user.username}</p>
                 <a 
                 className="green-button logout-nav" 
                 onClick={logout.bind(this)}>

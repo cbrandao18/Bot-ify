@@ -55,6 +55,7 @@ class SessionForm extends React.Component {
             <p>Botify</p>
           </a>
         </div>
+
         <div className="session-form-wrapper">
           <p>{this.props.formType}</p>
           <div className="session-errors">{errors}</div>
@@ -84,7 +85,6 @@ class SessionForm extends React.Component {
         </div>
       </div>
     )
-   
   }
 }
 
