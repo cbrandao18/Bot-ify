@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login'){
       footerText = <p>Don't have an account?</p>
     } else {
-      footerText = <p>Already have an account?</p >
+      footerText = <p>Already have an account?</p>
     }
 
     let errors = Object.keys(this.props.errors).map(errorKey => {
@@ -59,11 +59,18 @@ class SessionForm extends React.Component {
           <p>{this.props.formType}</p>
           <div className="session-errors">{errors}</div>
           <form onSubmit={this.handleSubmit}>
-            <input onChange={this.update("username")} type="text" value={this.state.username}
+            <input onChange={this.update("username")} 
+              type="text" 
+              value={this.state.username}
               placeholder="Username" />
-            <input onChange={this.update("password")} type="password" value={this.state.password}
+            <input 
+              onChange={this.update("password")} 
+              type="password" value={this.state.password}
               placeholder="Password" />
-            <button className="green-button green-button-session">{this.props.formType}</button>
+            <button 
+              className="green-button green-button-session">
+              {this.props.formType}
+            </button>
           </form>
 
           <div className="form-footer">
@@ -74,9 +81,7 @@ class SessionForm extends React.Component {
           <div className="demo-login">
             <a onClick={this.loginAsRobot.bind(this)}>Login as demo user</a>
           </div>
-          
         </div>
-
       </div>
     )
    
