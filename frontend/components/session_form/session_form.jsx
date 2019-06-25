@@ -30,6 +30,10 @@ class SessionForm extends React.Component {
     })
   }
 
+  componentDidMount(){
+    this.props.clearErrors();
+  }
+
   render(){
     let footerText;
     if (this.props.formType === 'login'){
