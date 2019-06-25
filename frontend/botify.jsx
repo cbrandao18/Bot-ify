@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from './components/root';
-import * as actions from './actions/session_actions'
+import * as playlistActions from './actions/playlist_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch; 
-    window.actions = actions;
+    window.playlistActions = playlistActions;
 
     ReactDOM.render(<Root store={store} />, root);
 });
