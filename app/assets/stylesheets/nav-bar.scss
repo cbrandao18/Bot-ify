@@ -7,20 +7,27 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.nav-bar-footer, .nav-bar-link{
+.nav-bar-footer{
     color: white;
     padding: 5px;
 }
 
-.nav-bar-link{
+.nav-bar-link {
     width: 140px;
     margin: 0 auto;
+    font-size: 13px;
+    padding: 10px;
+    color: #b3b3b3;
+}
+
+.nav-bar-link:hover {
+    color: white;
 }
 
 .nav-bar-link > .fa-home,
 .nav-bar-link > .fa-search,
 .nav-bar-link > .fa-music {
-    padding-right: 10px;
+    padding-right: 20px;
 }
 
 .session-user {
