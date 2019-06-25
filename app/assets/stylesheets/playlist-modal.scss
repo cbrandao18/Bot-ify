@@ -1,0 +1,31 @@
+.playlist-modal-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 104;
+}
+
+.playlist-form-wrapper{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.playlist-close {
+    color: white;
+    font-size: 50px;
+}
+
+.playlist-close:hover {
+    color: white;
+    font-size: 55px;
+}

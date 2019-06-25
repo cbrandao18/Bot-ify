@@ -87,8 +87,7 @@
     text-align: center;
 }
 
-.green-button{
-    margin: 0 auto;
+.green-button {
     color: white;
     font-weight: 700;
     background-color: #1DB954;
@@ -100,6 +99,20 @@
     text-transform: uppercase;
 }
 
-.green-button:hover {
+.green-button:hover,
+.green-button-hero:hover {
     background-color: #1ED760;
+}
+
+.green-button-hero {
+    margin: 0 auto;
+    color: white;
+    font-weight: 700;
+    background-color: #1DB954;
+    border-radius: 500px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
