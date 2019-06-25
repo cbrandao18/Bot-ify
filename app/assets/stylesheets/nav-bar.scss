@@ -4,11 +4,23 @@
     background-color: rgba(0,0,0,.8);
     width: 200px;
     height: 100vh;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.nav-bar-footer {
+.nav-bar-footer, .nav-bar-link{
     color: white;
     padding: 5px;
+}
+
+.nav-bar-link{
+    width: 140px;
+    margin: 0 auto;
+}
+
+.nav-bar-link > .fa-home,
+.nav-bar-link > .fa-search,
+.nav-bar-link > .fa-music {
+    padding-right: 10px;
 }
 
 .session-user {
@@ -18,4 +30,23 @@
 
 .logout-nav {
     margin-left: 40px;
+}
+.fas, .fa-user{
+    padding: 0px 5px 0px 5px;
+}
+
+.nav-bar-logo {
+    display: block;
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.07em;
+    height: 75px;
+}
+.nav-bar-logo > a {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    margin: 0 auto;
+    padding: 30px 0px 30px 70px;
 }
