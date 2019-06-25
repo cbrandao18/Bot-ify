@@ -8,7 +8,7 @@
     z-index: 104;
 }
 
-.playlist-form-wrapper{
+.playlist-form-wrapper {
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -20,6 +20,12 @@
     flex-direction: column;
 }
 
+.playlist-close-wrapper {
+    height: 70px;
+    width: 50px;
+    text-align: center;
+}
+
 .playlist-close {
     color: white;
     font-size: 50px;
@@ -28,4 +34,54 @@
 .playlist-close:hover {
     color: white;
     font-size: 55px;
+}
+
+.playlist-form-wrapper h1 {
+    font-size: 48px;
+    color: white;
+    letter-spacing: -.005em;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.playlist-input-form-wrapper {
+    width: 100%;
+    padding: 0 20%;
+    background-color: #282828;
+}
+
+.input-box {
+    position: relative;
+    background-color: #282828;
+    padding: 20px 0;
+}
+
+.content-spacing {
+    padding: 0 200px;
+    margin: 0 auto;
+    max-width: 1480px;
+}
+
+.inputBox-label {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: var(--glue-font-weight-bold);
+    color: #fff;
+    text-transform: none;
+    margin-bottom: .5em;
+}
+
+.inputBox-input {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    font-weight: var(--glue-font-weight-black);
+    color: #fff;
+    text-transform: none;
+    caret-color: #1db954;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border: none;
 }
