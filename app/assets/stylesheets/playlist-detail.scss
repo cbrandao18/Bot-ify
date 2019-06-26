@@ -1,0 +1,44 @@
+.playlist-detail-wrapper {
+    width: calc( 100% - 240px);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+    position: fixed;
+    will-change: transform;
+    opacity: 1;
+    background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
+    padding-left: 240px;
+    text-align: center;
+}
+
+.playlist-detail-info {
+    width: 450px;
+    padding: 20px;
+}
+
+.playlist-detail-info h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+    width: 450px;
+    padding: 20px 0px 10px 0px;
+}
+
+.playlist-detail-info h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    width: 450px;
+    margin: 0;
+}
+
+.playlist-image {
+    background-size: contain;
+    background: image-url('playlist-image-large.png') no-repeat center center;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}

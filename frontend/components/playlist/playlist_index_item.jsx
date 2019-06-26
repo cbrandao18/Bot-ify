@@ -8,7 +8,6 @@ const PlaylistIndexItem = ({playlist}) => {
                 <Link to={`/playlists/${playlist.id}`}>
                     {playlist.title}
                 </Link>
-                
             </li>
         </div>
     )

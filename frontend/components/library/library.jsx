@@ -26,9 +26,9 @@ class Library extends React.Component {
                     <div className="library-index-nav">
 
                     </div>
-                    <Link to={'/browse/library/playlist/create'} className="green-button new-playlist">
+                    <Link to={'/browse/library/playlist/create'} className="green-button playlist-btns">
                         New Playlist
-                </Link>
+                    </Link>
                 </div>
                 <div className="library-index-content">
                     <ul>
