@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Library from './library'
+import { fetchPlaylists } from '../../actions/playlist_actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -9,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        
+        fetchPlaylists: () => dispatch(fetchPlaylists())
     }
 }
 
