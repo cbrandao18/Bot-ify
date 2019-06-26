@@ -5,8 +5,8 @@ const PlaylistIndexItem = ({playlist}) => {
     return (
             <li>
                 <Link to={`/playlists/${playlist.id}`}>
-                    <div className="playlist-image"></div>
-                    {playlist.title}
+                <div className="playlist-image playlist-image--small"></div>
+                    <div>{playlist.title}</div>
                 </Link>
             </li>
     )
