@@ -15,7 +15,7 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def show
-        @playlist = Playlist.find_by(id: params[:id]).includes(:owner)
+        @playlist = Playlist.includes(:owner).find_by(id: params[:id])
         render :show
     end
 

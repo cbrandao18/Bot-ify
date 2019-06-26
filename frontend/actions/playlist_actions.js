@@ -11,10 +11,10 @@ export const receiveAllPlaylists = (playlists) => {
     }
 }
 
-export const receivePlaylist = (playlist) => {
+export const receivePlaylist = (payload) => {
     return {
         type: RECEIVE_PLAYLIST,
-        playlist
+        payload
     }
 }
 
@@ -32,7 +32,7 @@ export const fetchPlaylists = () => (dispatch) => {
 
 export const fetchPlaylist = (id) => (dispatch) => {
     return PlaylistApiUtil.fetchPlaylist(id)
-        .then(payload => dispatch(receivePlaylist(payload.playlist)))
+        .then(payload => dispatch(receivePlaylist(payload)))
 }
 
 

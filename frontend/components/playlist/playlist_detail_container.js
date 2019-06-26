@@ -3,8 +3,15 @@ import PlaylistDetail from './playlist_detail'
 import { fetchPlaylist, deletePlaylist } from '../../actions/playlist_actions'
 
 const mapStateToProps = (state, ownProps) => {
+    const playlist = state.entities.playlists[ownProps.match.params.playlistId];
+    let user;
+    if (playlist){
+        user = state.entities.users[playlist.owner_id]
+    }
+    // console.log({playlist})
     return {
-        playlist: state.entities.playlists[ownProps.match.params.playlistId]
+        playlist: playlist,
+        user: user
     }
 }
 
