@@ -15,7 +15,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/" component={Splash} />
 
-        <ProtectedRoute path="/browse" component={NavBarContainer} />
+        <ProtectedRoute path="/" component={NavBarContainer} />
         <ProtectedRoute path="/browse/library" component={LibraryContainer} />
         <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
         <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
