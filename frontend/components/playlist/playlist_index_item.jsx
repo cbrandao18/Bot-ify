@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 
 const PlaylistIndexItem = ({playlist}) => {
     return (
-        <div>
             <li>
                 <Link to={`/playlists/${playlist.id}`}>
+                    <div className="playlist-image"></div>
                     {playlist.title}
                 </Link>
             </li>
-        </div>
     )
 }
 

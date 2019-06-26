@@ -19,10 +19,10 @@ const App = () => (
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={Splash} />
-            <ProtectedRoute path="/browse/library" component={LibraryContainer} />
+            <ProtectedRoute path="/browse/library/playlists" component={LibraryContainer} />
             <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
             <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
-            <Redirect to='/browse/library'></Redirect>
+            <Redirect to='/browse/library/playlists'></Redirect>
             {/* change Redirect to /browse/featured when home page is done */}
         </Switch>
 

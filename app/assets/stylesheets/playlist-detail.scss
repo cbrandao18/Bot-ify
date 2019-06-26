@@ -42,3 +42,13 @@
     height: 250px;
     margin: 0 auto;
 }
+
+.library-index-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.library-index-list > li {
+    padding: 0px 5px 0px 5px;
+}

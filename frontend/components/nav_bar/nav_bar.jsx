@@ -20,7 +20,7 @@ const NavBar = ({ current_user, logout }) => {
                     <i className="fas fa-search"></i>
                     <span>Search</span>
                 </NavLink>
-                <NavLink className="nav-bar-link" to={'/browse/library'}>
+                <NavLink className="nav-bar-link" to={'/browse/library/playlists'}>
                     <i className="fas fa-music"></i>
                     <span>Your Library</span>
                 </NavLink>

@@ -11,6 +11,7 @@
     background-image: linear-gradient(to right bottom, rgb(150, 137, 3), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
     padding-left: 240px;
     text-align: center;
+    overflow-y: scroll;
 }
 
 .library-index-header{
@@ -23,4 +24,21 @@
     font-size: 10px;
     font-weight: 500;
     padding: 8px 20px;
+}
+
+.library-index-nav {
+    margin-bottom: 20px;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.50px;
+    font-weight: 600;
+    > .nav-item {
+        padding-bottom: 5px;
+        margin: 0px 20px 0px 20px;
+        &.active {
+            color: white;
+            border-bottom: 2px solid #1DB954;;
+        }
+    }
 }

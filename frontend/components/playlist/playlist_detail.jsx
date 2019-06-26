@@ -11,7 +11,7 @@ class PlaylistDetail extends React.Component {
 
     handleDelete(){
         this.props.deletePlaylist(this.props.match.params.playlistId)
-            .then(() => this.props.history.push('/browse/library'))
+            .then(() => this.props.history.push('/browse/library/playlists'))
     }
 
     render(){

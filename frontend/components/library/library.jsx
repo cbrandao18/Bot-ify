@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import PlaylistIndexItem from '../playlist/playlist_index_item';
 
 class Library extends React.Component {
@@ -24,14 +24,17 @@ class Library extends React.Component {
             <div className="library-container">
                 <div className="library-index-header">
                     <div className="library-index-nav">
-
+                        <NavLink to='/browse/library/playlists' className="nav-item">Playlists</NavLink>
+                        <NavLink to='/browse/library/songs'className="nav-item">Songs</NavLink>
+                        <NavLink to='/browse/library/albums'className="nav-item">Albums</NavLink>
+                        <NavLink to='/browse/library/artists'className="nav-item">Artists</NavLink>
                     </div>
                     <Link to={'/browse/library/playlist/create'} className="green-button playlist-btns">
                         New Playlist
                     </Link>
                 </div>
                 <div className="library-index-content">
-                    <ul>
+                    <ul className="library-index-list">
                         {playlistItems}
                     </ul>
                 </div>
