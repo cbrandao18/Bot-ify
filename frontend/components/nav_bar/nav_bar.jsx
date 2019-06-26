@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = ({ current_user, logout }) => {
     return (
@@ -12,18 +12,18 @@ const NavBar = ({ current_user, logout }) => {
                     </a>
                 </div>
 
-                <Link className="nav-bar-link" to={'/browse/featured'}>
+                <NavLink className="nav-bar-link" to={'/browse/featured'}>
                     <i className="fas fa-home"></i>
                     <span>Home</span>
-                </Link>
-                <Link className="nav-bar-link" to={'/browse/search'}>
+                </NavLink>
+                <NavLink className="nav-bar-link" to={'/browse/search'}>
                     <i className="fas fa-search"></i>
                     <span>Search</span>
-                </Link>
-                <Link className="nav-bar-link" to={'/browse/library'}>
+                </NavLink>
+                <NavLink className="nav-bar-link" to={'/browse/library'}>
                     <i className="fas fa-music"></i>
                     <span>Your Library</span>
-                </Link>
+                </NavLink>
 
             </div>
             <div className="nav-bar-footer">

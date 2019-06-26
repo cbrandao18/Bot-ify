@@ -18,21 +18,23 @@
 }
 
 .nav-bar-link {
-    width: 140px;
+    width: 190px;
     margin: 0 auto;
     font-size: 13px;
-    padding: 10px;
     color: #b3b3b3;
-}
-
-.nav-bar-link:hover {
-    color: white;
-}
-
-.nav-bar-link > .fa-home,
-.nav-bar-link > .fa-search,
-.nav-bar-link > .fa-music {
-    padding-right: 20px;
+    margin: 10px;
+    padding-left: 30px;
+    &.active {
+        color: white;
+        font-weight: 600;
+        border-left: 2px solid green;
+    }
+    &:hover{
+        color: white;
+    }
+    > .fa-home, > .fa-search, > .fa-music {
+        padding-right: 20px;
+    }
 }
 
 .session-user {
