@@ -8,7 +8,6 @@ class Library extends React.Component {
     }
 
     componentDidMount(){
-        debugger
         this.props.fetchPlaylists();
     }
 
@@ -20,7 +19,7 @@ class Library extends React.Component {
                 return <PlaylistIndexItem key={id} playlist={playlist}/>
             })
         }
-        
+
         return (
             <div className="library-container">
                 <div className="library-index-header">

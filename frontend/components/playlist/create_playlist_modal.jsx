@@ -18,7 +18,6 @@ class CreatePlaylistModal extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
         this.props.createPlaylist(this.state);
         this.props.history.push('/browse/library');
     }

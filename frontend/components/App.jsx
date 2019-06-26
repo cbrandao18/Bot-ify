@@ -7,6 +7,7 @@ import Splash from '../components/splash/splash';
 import NavBarContainer from '../components/nav_bar/nav_bar_container';
 import LibraryContainer from '../components/library/library_container';
 import CreatePlaylistModalContainer from '../components/playlist/create_playlist_modal_container';
+import PlaylistDetailContainer from '../components/playlist/playlist_detail_container';
 
 const App = () => (
     <div>
@@ -17,6 +18,8 @@ const App = () => (
         <ProtectedRoute path="/browse" component={NavBarContainer} />
         <ProtectedRoute path="/browse/library" component={LibraryContainer} />
         <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
+        <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
+    
     </div>
 );
 
