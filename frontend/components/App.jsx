@@ -16,9 +16,9 @@ const App = () => (
         {/* playbar the bottom */}
 
         <Switch>
+            <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <AuthRoute exact path="/" component={Splash} />
             <ProtectedRoute path="/browse/library/playlists" component={LibraryContainer} />
             <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
             <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
