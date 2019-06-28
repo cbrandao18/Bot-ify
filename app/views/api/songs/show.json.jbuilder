@@ -1,3 +1,3 @@
 json.song do
-    json.extract! song, :title, :length, :album_id, :explicit, :album_order
+    json.extract! song, :title, :length, :album_id, :explicit, :album_order, :id
 end
