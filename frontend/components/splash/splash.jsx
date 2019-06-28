@@ -30,6 +30,13 @@ class Splash extends React.Component {
                     <h2>Millions of techno songs for the robots among us. No credit card needed.</h2>
                     <a className="green-button-hero" href="#/signup">GET BOTIFY FREE 🤖 </a>
                 </div>
+
+                {/* <div className="splash-footer">
+                    <div className="splash-footer-content">
+                        <div className="white-logo"></div>
+                        <p>Botify</p>
+                    </div>
+                </div> */}
             </div>
         )
     }

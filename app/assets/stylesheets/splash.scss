@@ -48,7 +48,7 @@
 .splash-text-content {
     display: flex;
     flex-direction: column;
-    height: 800px;
+    height: 720px;
 }
 
 .splash-text-content > h1 > p {
@@ -117,4 +117,14 @@
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.splash-footer {
+    background-color: black;
+    height: 300px;
+    padding: 50px
+}
+
+.splash-footer-content {
+    color: white;
 }
