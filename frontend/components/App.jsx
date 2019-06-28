@@ -12,7 +12,6 @@ import PlaylistDetailContainer from '../components/playlist/playlist_detail_cont
 const App = () => (
     <div>
         
-        <ProtectedRoute path="/" component={NavBarContainer} />
         {/* playbar the bottom */}
 
         <Switch>
@@ -26,6 +25,7 @@ const App = () => (
             {/* change Redirect to /browse/featured when home page is done */}
         </Switch>
 
+        <ProtectedRoute path="/" component={NavBarContainer} />
     
     </div>
 );
