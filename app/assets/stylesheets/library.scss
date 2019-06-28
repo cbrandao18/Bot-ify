@@ -1,4 +1,5 @@
-.library-container {
+.library-container,
+.artist-index-container {
     width: calc( 100% - 240px);
     height: 100vh;
     background-size: cover;
@@ -12,6 +13,10 @@
     padding-left: 240px;
     text-align: center;
     overflow-y: scroll;
+}
+
+.artist-index-container {
+    background-image: linear-gradient(to right bottom, rgb(77, 77, 77), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
 .library-index-header{
@@ -47,4 +52,14 @@
     color: white;
     margin: 10px 0px 20px 0px;
     width: 150px;
+}
+
+.artist-index-container > .library-index-header {
+    height: 50px;
+}
+
+.artist-index-item {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
 }

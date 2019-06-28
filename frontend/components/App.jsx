@@ -8,6 +8,8 @@ import NavBarContainer from '../components/nav_bar/nav_bar_container';
 import LibraryContainer from '../components/library/library_container';
 import CreatePlaylistModalContainer from '../components/playlist/create_playlist_modal_container';
 import PlaylistDetailContainer from '../components/playlist/playlist_detail_container';
+import ArtistIndexContainer from '../components/library/artists/artist_container';
+import LibraryNavBar from '../components/nav_bar/library_nav_bar';
 
 const App = () => (
     <div>
@@ -20,6 +22,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute path="/browse/library/playlists" component={LibraryContainer} />
             <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
+            <ProtectedRoute path="/browse/library/artists" component={ArtistIndexContainer} />
             <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
             <Redirect to='/browse/library/playlists'></Redirect>
             {/* change Redirect to /browse/featured when home page is done */}
