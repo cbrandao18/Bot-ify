@@ -2,7 +2,7 @@ json.album do
     json.extract! @album, :title, :artist_id, :id
 
     json.songs do
-        @albums.songs.each do |song|
+        @album.songs.each do |song|
             json.set! song.id do
                 json.extract! song, :title, :length, :album_id, :explicit, :album_order, :id
             end
@@ -12,5 +12,5 @@ json.album do
 end
 
 json.artist do
-    json.extract! album.artist, :name, :has_poster, :id
+    json.extract! @album.artist, :name, :has_poster, :id
 end
