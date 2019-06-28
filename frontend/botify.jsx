@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from './components/root';
-import { fetchArtists, fetchArtist } from './util/artist_api_util'
-import { fetchAlbums, fetchAlbum } from './util/album_api_util'
-import { fetchSongs, fetchSong } from './util/song_api_util'
+import { fetchArtists, fetchArtist } from './actions/artist_actions'
+import { fetchAlbums, fetchAlbum } from './actions/album_actions'
+import { fetchSongs, fetchSong } from './actions/song_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
