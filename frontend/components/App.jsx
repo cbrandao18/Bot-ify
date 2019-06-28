@@ -8,8 +8,8 @@ import NavBarContainer from '../components/nav_bar/nav_bar_container';
 import LibraryContainer from '../components/library/library_container';
 import CreatePlaylistModalContainer from '../components/playlist/create_playlist_modal_container';
 import PlaylistDetailContainer from '../components/playlist/playlist_detail_container';
-import ArtistIndexContainer from '../components/library/artists/artist_container';
-import LibraryNavBar from '../components/nav_bar/library_nav_bar';
+import ArtistIndexContainer from '../components/library/artists/artist_index_container';
+import ArtistDetailContainer from './library/artists/artist_detail_container';
 
 const App = () => (
     <div>
@@ -24,6 +24,7 @@ const App = () => (
             <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
             <ProtectedRoute path="/browse/library/artists" component={ArtistIndexContainer} />
             <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
+            <ProtectedRoute path="/artists/:artistId" component={ArtistDetailContainer} />
             <Redirect to='/browse/library/playlists'></Redirect>
             {/* change Redirect to /browse/featured when home page is done */}
         </Switch>
