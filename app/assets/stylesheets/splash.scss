@@ -20,7 +20,8 @@
     left: 15px;
 }
 
-.splash-top-nav p {
+.splash-top-nav p,
+.splash-footer-content p {
     position: absolute;
     color: white;
     font-weight: 600;
@@ -127,4 +128,13 @@
 
 .splash-footer-content {
     color: white;
+}
+
+.splash-footer-content > .white-logo {
+    top: 850px;
+}
+
+.splash-footer-content > p {
+    top: 860px;
+    left: 70px;
 }
