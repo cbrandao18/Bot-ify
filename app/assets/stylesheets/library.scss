@@ -80,6 +80,15 @@
     border-radius: 50%;
 }
 
+.album-image {
+    background: image-url('albums/1.jpg');
+    background-size: contain;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
 .artist-detail-container h2 {
     font-size: 72px;
     line-height: 82px;
@@ -106,4 +115,31 @@
     bottom: 0;
     height: 361px;
     background: -webkit-gradient(linear,left top,left bottom,color-stop(-30%,transparent),to(#181818));
+}
+
+.artist-detail {
+    color: white;
+}
+
+
+
+.artist-albums {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px 50px 0px 50px;
+}
+
+.artist-detail h3 {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -.005em;
+}
+
+.artist-albums li {
+    padding: 10px;
+}
+
+.artist-albums p {
+    padding: 10px 0px 10px 0px;
 }
