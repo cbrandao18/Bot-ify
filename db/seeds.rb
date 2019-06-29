@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'open-uri'
+# require 'open-uri'
 
 User.destroy_all
 Artist.destroy_all
@@ -22,8 +22,8 @@ album1 = Album.create(title: 'Album1', artist_id: artist1.id)
 album2 = Album.create(title: 'Album2', artist_id: artist1.id)
 album3 = Album.create(title: 'Album3', artist_id: artist2.id)
 
-album1_cover = open('https://botify-dev.s3.us-east-2.amazonaws.com/albums/1.jpg')
-album1.photo.attach(io: album1_cover, filename: '1.jpg')
+# album1_cover = open('https://botify-dev.s3.us-east-2.amazonaws.com/albums/1.jpg')
+# album1.photo.attach(io: album1_cover, filename: '1.jpg')
 
 Song.create(title: 'Album1Song1', length: 160, album_id: album1.id, explicit: true, album_order: 1)
 Song.create(title: 'Album1Song2', length: 140, album_id: album1.id, explicit: true, album_order: 2)
