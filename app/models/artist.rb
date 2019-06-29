@@ -8,4 +8,5 @@ class Artist < ApplicationRecord
     through: :albums,
     source: :songs
 
+    has_one_attached :photo
 end
