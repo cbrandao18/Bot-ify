@@ -3,4 +3,6 @@ class Song < ApplicationRecord
     validates :explicit, inclusion: {in: [true, false]}
 
     belongs_to :album
+
+    has_one_attached :track
 end
