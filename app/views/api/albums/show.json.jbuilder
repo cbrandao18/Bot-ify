@@ -1,5 +1,6 @@
 json.album do
     json.extract! @album, :title, :artist_id, :id
+    json.cover url_for(@album.album_cover)
 end
 
 json.songs do

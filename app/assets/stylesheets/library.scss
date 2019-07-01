@@ -71,7 +71,6 @@
 }
 
 .artist-index-image {
-    background: image-url('artists/1.jpeg');
     background-size: contain;
     position: relative;
     width: 150px;
@@ -81,7 +80,6 @@
 }
 
 .album-image {
-    background: image-url('albums/1.jpg');
     background-size: contain;
     position: relative;
     width: 150px;
@@ -102,7 +100,6 @@
 
 .artist-detail-container > .library-index-header {
     height: 300px;
-    background: image-url('artists/1-hero.jpeg') no-repeat;
     background-size: cover;
 }
 
@@ -120,8 +117,6 @@
 .artist-detail {
     color: white;
 }
-
-
 
 .artist-albums {
     display: flex;

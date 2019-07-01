@@ -18,11 +18,17 @@ class ArtistDetail extends React.Component {
             return <ArtistAlbumItem key={`album-${albumId}`} album={album} />
         })
 
+        let artistHeaderStyle = {
+            backgroundImage: `url('${this.props.artist.hero}')`
+        }
+
         return (
             <div className="artist-detail-container">
-                <div className="library-index-header">
-                    <div className="artist-detail-gradient">
-                    </div>
+                <div 
+                    className="library-index-header"
+                    style={artistHeaderStyle}
+                >
+                    <div className="artist-detail-gradient"></div>
                     <h2>{this.props.artist.name}</h2>
                 </div>
                 
