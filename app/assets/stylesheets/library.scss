@@ -1,7 +1,8 @@
 .library-container,
 .artist-index-container,
 .artist-detail-container,
-.album-index-container {
+.album-index-container,
+.song-index-container {
     width: calc( 100% - 240px);
     height: 100vh;
     background-size: cover;
@@ -25,6 +26,9 @@
 .artist-detail-container {
     background-image: none;
     background-color: rgb(30, 30, 30);
+}
+.song-index-container {
+    background-image: linear-gradient(to right bottom, rgb(30, 50, 100), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
 .library-index-header{

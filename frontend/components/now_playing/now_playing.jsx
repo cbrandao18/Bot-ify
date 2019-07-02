@@ -15,7 +15,6 @@ class NowPlaying extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         let songInfo;
         if (this.props.currentSong.title){
             let albumImageStyle = {

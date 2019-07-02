@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
     if (playlist){
         user = state.entities.users[playlist.owner_id]
     }
-    // console.log({playlist})
     return {
         playlist: playlist,
         user: user
