@@ -123,11 +123,14 @@
 .splash-footer {
     background-color: black;
     height: 300px;
-    padding: 50px
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: row;
 }
 
 .splash-footer-content {
-    color: white;
+    width: 200px;
 }
 
 .splash-footer-content > .white-logo {
@@ -137,4 +140,38 @@
 .splash-footer-content > p {
     top: 860px;
     left: 70px;
+}
+
+.column {
+    width: 120px;
+    padding: 10px 50px 0px 0px;
+}
+
+.col-header {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #919496;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+}
+
+.column li,
+.column-big li {
+    margin: 0px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.column-big a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.about-me-text {
+    margin-bottom: 20px;
+}
+
+.column-big {
+    padding: 10px 50px 0px 0px;
+    width: 360px;
 }

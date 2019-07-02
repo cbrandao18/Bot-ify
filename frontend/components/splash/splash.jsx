@@ -17,9 +17,9 @@ class Splash extends React.Component {
                         </a>
                     </div>
                     <div className="splash-nav-links">
-                        <span>Developed by: </span>
+                        {/* <span>Developed by: </span>
                         <a href="https://github.com/cbrandao18">Christie Brandao</a>
-                        <span> | </span>
+                        <span> | </span> */}
                         <a href="#/signup">Sign Up</a>
                         <a href="#/login">Login</a>
                     </div>
@@ -35,6 +35,33 @@ class Splash extends React.Component {
                     <div className="splash-footer-content">
                         <div className="white-logo"></div>
                         <p>Botify</p>
+                    </div>
+                    <div className="column">
+                        <p className="col-header">Technologies</p>
+                        <ul>
+                            <li>Javascript</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Ruby on Rails</li>
+                            <li>Postgres</li>
+                            <li>Heroku</li>
+                            <li>Sass</li>
+                        </ul>
+                    </div>
+                    <div className="column-big">
+                        <p className="col-header">About Me</p>
+                        <p className="about-me-text">
+                            This app was developed by Christie Brandao as the 
+                            final project for the App Academy coding bootcamp.
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="https://github.com/cbrandao18" target="_blank">Github</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/christiebrandao/" target="_blank">LinkedIn</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
