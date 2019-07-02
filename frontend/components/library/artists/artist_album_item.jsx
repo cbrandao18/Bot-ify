@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 class ArtistAlbumItem extends React.Component {
 
     render(){
+        if (!this.props.album) return <></>
+
         let albumStyle = {
             backgroundImage: `url('${this.props.album.cover}')`
         }
@@ -14,7 +16,10 @@ class ArtistAlbumItem extends React.Component {
                         className="album-image"
                         style={albumStyle}
                     ></div>
-                    <p>{this.props.album.title}</p>
+                    <p className="album-title">{this.props.album.title}</p>
+                </Link>
+                <Link to={`/artists/${this.props.artist.id}`}>
+                    <p className="album-artist">{this.props.artist.name}</p>
                 </Link>
             </li>
         )

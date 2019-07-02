@@ -15,7 +15,8 @@ class ArtistDetail extends React.Component {
 
         let artistAlbumItems = Object.keys(this.props.albums).map(albumId => {
             let album = this.props.albums[albumId];
-            return <ArtistAlbumItem key={`album-${albumId}`} album={album} />
+            let artist = this.props.artist;
+            return <ArtistAlbumItem key={`album-${albumId}`} album={album} artist={artist}/>
         })
 
         let artistHeaderStyle = {

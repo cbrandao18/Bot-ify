@@ -10,6 +10,7 @@ import CreatePlaylistModalContainer from '../components/playlist/create_playlist
 import PlaylistDetailContainer from '../components/playlist/playlist_detail_container';
 import ArtistIndexContainer from '../components/library/artists/artist_index_container';
 import ArtistDetailContainer from './library/artists/artist_detail_container';
+import AlbumIndexContainer from './library/albums/album_index_container';
 
 const App = () => (
     <div>
@@ -23,6 +24,7 @@ const App = () => (
             <ProtectedRoute path="/browse/library/playlists" component={LibraryContainer} />
             <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
             <ProtectedRoute path="/browse/library/artists" component={ArtistIndexContainer} />
+            <ProtectedRoute path="/browse/library/albums" component={AlbumIndexContainer} />
             <ProtectedRoute path="/playlists/:playlistId" component={PlaylistDetailContainer} />
             <ProtectedRoute path="/artists/:artistId" component={ArtistDetailContainer} />
             <Redirect to='/browse/library/playlists'></Redirect>
