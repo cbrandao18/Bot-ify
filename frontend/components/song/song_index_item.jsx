@@ -2,6 +2,12 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 class SongIndexItem extends React.Component {
+
+    togglePlayAndSetQueue(){
+        this.props.setSongQueue([this.props.song.id])
+        this.props.isPlaying()
+    }
+
     render(){
         return (
             <div className="tracklist-row">
@@ -9,7 +15,9 @@ class SongIndexItem extends React.Component {
                 {/* icons */}
                 <div className="tracklist-col position-outer">
                     <div className="tracklist-music-icon tracklist-top-align">
-                        <i className="fas tracklist-icon"></i>
+                        <button onClick={this.togglePlayAndSetQueue.bind(this)}>
+                            <i className="fas tracklist-icon"></i>
+                        </button>
                     </div>
                 </div>
 

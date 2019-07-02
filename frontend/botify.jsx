@@ -5,6 +5,7 @@ import Root from './components/root';
 import { fetchArtists, fetchArtist } from './actions/artist_actions'
 import { fetchAlbums, fetchAlbum } from './actions/album_actions'
 import { fetchSongs, fetchSong } from './actions/song_actions'
+import { isPlaying } from './actions/now_playing_actions'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
             entities: {
                 users: { [window.currentUser.id]: window.currentUser }
             },
-            session: { id: window.currentUser.id }
+            session: { id: window.currentUser.id },
+            ui: {
+                isPlaying: false,
+                queue: []
+            }
         };
         store = configureStore(preloadedState);
         delete window.currentUser;
@@ -32,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchAlbum = fetchAlbum
     window.fetchSongs = fetchSongs
     window.fetchSong = fetchSong
+
+    window.isPlaying = isPlaying;
 
     ReactDOM.render(<Root store={store} />, root);
 });

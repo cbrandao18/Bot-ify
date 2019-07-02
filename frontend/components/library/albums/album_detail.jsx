@@ -25,7 +25,13 @@ class AlbumDetail extends React.Component {
             let song = this.props.songs[songId];
             let artist = this.props.artist
             return (
-                <SongIndexItem key={`song-${songId}`} song={song} artist={artist}/>
+                <SongIndexItem 
+                    key={`song-${songId}`} 
+                    song={song} 
+                    artist={artist}
+                    isPlaying={this.props.isPlaying}
+                    setSongQueue={this.props.setSongQueue}
+                />
             )
         })
 

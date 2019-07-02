@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import AlbumDetail from './album_detail'
 import { fetchAlbum } from '../../../actions/album_actions'
 import { fetchArtist } from '../../../actions/artist_actions'
+import { isPlaying, setSongQueue } from '../../../actions/now_playing_actions'
 
 const mapStateToProps = (state, ownProps) => {
     let album = state.entities.albums[ownProps.match.params.albumId];
@@ -29,7 +30,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchAlbum: (id) => dispatch(fetchAlbum(id)),
-        fetchArtist: (id) => dispatch(fetchArtist(id))
+        fetchArtist: (id) => dispatch(fetchArtist(id)),
+        isPlaying: () => dispatch(isPlaying()),
+        setSongQueue: (queue) => dispatch(setSongQueue(queue))
     }
 }
 

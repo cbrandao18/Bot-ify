@@ -1,0 +1,34 @@
+.now-playing-container {
+    background-color: #181818;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 50;
+    border-top: 1px solid black;
+}
+
+.now-playing-bar {
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    &-left {
+        width: 30%;
+        min-width: 180px;
+    }
+    &-center {
+        width: 40%;
+        max-width: 722px;
+    }
+    &-right {
+        width: 30%;
+        min-width: 180px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}

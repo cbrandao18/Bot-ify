@@ -12,11 +12,13 @@ import ArtistIndexContainer from '../components/library/artists/artist_index_con
 import ArtistDetailContainer from './library/artists/artist_detail_container';
 import AlbumIndexContainer from './library/albums/album_index_container';
 import AlbumDetailContainer from './library/albums/album_detail_container';
+import NowPlaying from './now_playing/now_playing';
 
 const App = () => (
     <div>
         
-        {/* playbar the bottom */}
+        <ProtectedRoute path="/" component={NowPlaying} />
+        <ProtectedRoute path="/" component={NavBarContainer} />
 
         <Switch>
             <AuthRoute exact path="/" component={Splash} />
@@ -33,7 +35,6 @@ const App = () => (
             {/* change Redirect to /browse/featured when home page is done */}
         </Switch>
 
-        <ProtectedRoute path="/" component={NavBarContainer} />
     
     </div>
 );
