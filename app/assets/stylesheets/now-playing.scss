@@ -30,5 +30,106 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        & .progress-bar {
+            margin-top: 2px;
+            width: 80px;
+        }
     }
+}
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+}
+
+.play-control-buttons{
+    margin-bottom: 12px;
+    width: 300px;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.control-button {
+    background-color: transparent;
+    border: none;
+    color: #b3b3b3;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    position: relative;
+    font-size: 20px;
+}
+
+.fa-play-circle {
+    font-size: 40px;
+    margin: 0px 20px 0px 10px;
+}
+
+.playback-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-progress-time {
+        font-size: 11px;
+        line-height: 16px;
+        letter-spacing: .015em;
+        min-width: 40px;
+        text-align: center;
+    }
+}
+
+.progress-bar {
+    height: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.progress-bar-bg {
+    background-color: #404040;
+    border-radius: 2px;
+    display: flex;
+    height: 4px;
+    width: 100%;
+}
+
+.middle-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.now-playing {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    &-album-cover {
+        height: 50px;
+        width: 50px;
+        background-size: contain;
+    }
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 14px;
+}
+
+.track-name {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    color: #fff;
+    text-align: left;
+}
+
+.fa-volume-down {
+    color: white;
 }

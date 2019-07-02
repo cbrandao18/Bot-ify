@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import SecondsToMins from './secondsToMins'
 
 class SongIndexItem extends React.Component {
 
@@ -38,7 +39,7 @@ class SongIndexItem extends React.Component {
                 {/* Song duration */}
                 <div className="tracklist-col tracklist-col-duration">
                     <div className="tracklist-duration tracklist-top-align">
-                        <span>{this.props.song.length}</span>
+                        <SecondsToMins totalSeconds={this.props.song.length}/>
                     </div>
                 </div>
             </div>
