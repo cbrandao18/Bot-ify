@@ -1,7 +1,6 @@
 import React from 'react'
 
 const secsToMins = ({totalSeconds}) => {
-    console.log(totalSeconds)
     var minutes = Math.floor(totalSeconds / 60);
     var seconds = totalSeconds - minutes * 60;
     if (seconds < 10){
