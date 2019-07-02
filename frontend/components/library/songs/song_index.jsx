@@ -23,6 +23,7 @@ class SongIndex extends React.Component{
         if (Object.keys(this.props.artists).length === 0) {
             return <></>
         }
+        console.log(this.props)
 
         let songItems = Object.keys(this.props.songs).map(songId => {
             let song = this.props.songs[songId];

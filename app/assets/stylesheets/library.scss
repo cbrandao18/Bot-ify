@@ -4,7 +4,7 @@
 .album-index-container,
 .song-index-container {
     width: calc( 100% - 240px);
-    height: 100vh;
+    height: calc( 100% - 91px);
     background-size: cover;
     background-repeat: no-repeat;
     left: 0;
@@ -67,7 +67,8 @@
     height: 200px;
 }
 
-.artist-index-container > .library-index-header {
+.artist-index-container > .library-index-header,
+.song-index-container > .library-index-header {
     height: 50px;
 }
 
@@ -167,4 +168,8 @@
 .album-artist:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.song-index-container .tracklist-container {
+    margin: 0 auto;
 }

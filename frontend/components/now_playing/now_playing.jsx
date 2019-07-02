@@ -12,9 +12,18 @@ class NowPlaying extends React.Component {
                 this.props.fetchSong(this.props.queue[0])
             }
         }
+
+        if (Object.keys(this.props.currentSong).length > 0){
+            this.props.fetchAlbum(this.props.currentSong.album_id)
+        }
+
+        if (Object.keys(this.props.currentAlbum).length > 0) {
+            this.props.fetchArtist(this.props.currentAlbum.artist_id)
+        }
     }
 
     render() {
+        if (!this.props.currentSong) return <></>
         let songInfo;
         if (this.props.currentSong.title){
             let albumImageStyle = {

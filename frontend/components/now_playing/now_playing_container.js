@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import NowPlaying from './now_playing'
 import { isPlaying, setSongQueue } from '../../actions/now_playing_actions'
 import { fetchSong } from '../../actions/song_actions'
+import { fetchAlbum } from '../../actions/album_actions'
+import { fetchArtist } from '../../actions/artist_actions'
 
 const mapStateToProps = (state) => {
 
@@ -27,7 +29,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         isPlaying: () => dispatch(isPlaying()),
         setSongQueue: (queue) => dispatch(setSongQueue(queue)),
-        fetchSong: (id) => dispatch(fetchSong(id))
+        fetchSong: (id) => dispatch(fetchSong(id)),
+        fetchAlbum: (id) => dispatch(fetchAlbum(id)),
+        fetchArtist: (id) => dispatch(fetchArtist(id)),
     }
 }
 
