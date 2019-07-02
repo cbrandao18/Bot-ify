@@ -1,0 +1,41 @@
+.album-detail-wrapper {
+    width: calc( 100% - 240px);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+    position: fixed;
+    will-change: transform;
+    opacity: 1;
+    background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
+    padding-left: 240px;
+    text-align: center;
+}
+
+.album-detail-info {
+    width: 450px;
+    padding: 50px;
+}
+
+.album-detail-info h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+    width: 450px;
+    padding: 20px 0px 10px 0px;
+}
+
+.album-detail-image {
+    background-size: contain;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.album-detail-info .album-artist {
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 0;
+}
