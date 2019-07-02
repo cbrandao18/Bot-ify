@@ -6,12 +6,23 @@ import { fetchArtist } from '../../../actions/artist_actions'
 const mapStateToProps = (state, ownProps) => {
     let album = state.entities.albums[ownProps.match.params.albumId];
     let artist;
+    let songObj;
+
     if (album){
-        artist = state.entities.artists[album.artist_id]
+        artist = state.entities.artists[album.artist_id];
+        songObj = Object.assign({}, state.entities.songs)
+
+        Object.keys(state.entities.songs).map(songId => {
+            if (state.entities.songs[songId].album_id !== album.id) {
+                delete songObj[songId];
+            }
+        })
     }
+    
     return {
         album: state.entities.albums[ownProps.match.params.albumId],
-        artist: artist
+        artist: artist,
+        songs: songObj
     }
 }
 

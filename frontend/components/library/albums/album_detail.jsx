@@ -1,18 +1,33 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import SongIndexItem from '../../song/song_index_item';
 
 class AlbumDetail extends React.Component {
 
     componentDidMount(){
-        this.props.fetchAlbum(this.props.match.params.albumId)
+        this.props.fetchAlbum(this.props.match.params.albumId);
     }
 
     render(){
-        if (!this.props.album || !this.props.artist) return <></>
+        if (!this.props.album) {
+            return <></>
+        }
+
+        if (!this.props.songs && Object.keys(this.props.songs).length === 0){
+            return <></>
+        }
 
         let albumImageStyle = {
             backgroundImage: `url('${this.props.album.cover}')`
         }
+
+        let songItems = Object.keys(this.props.songs).map(songId => {
+            let song = this.props.songs[songId];
+            let artist = this.props.artist
+            return (
+                <SongIndexItem key={`song-${songId}`} song={song} artist={artist}/>
+            )
+        })
 
         return(
             <div className="album-detail-wrapper">
@@ -27,6 +42,10 @@ class AlbumDetail extends React.Component {
                             {this.props.artist.name}
                         </Link>
                     </h3>
+                </div>
+
+                <div className="tracklist-container">
+                    {songItems}
                 </div>
             </div>
         )

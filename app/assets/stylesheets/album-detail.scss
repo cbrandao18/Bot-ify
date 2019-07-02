@@ -11,11 +11,13 @@
     background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
     padding-left: 240px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .album-detail-info {
     width: 450px;
-    padding: 50px;
+    padding: 50px 0px 50px 50px;
 }
 
 .album-detail-info h2 {
@@ -39,3 +41,94 @@
     font-size: 14px;
     margin-top: 0;
 }
+
+.tracklist-container {
+    width: 1000px;
+    padding: 50px 50px 50px 0px;
+    color: white;
+    float: left;
+    position: relative;
+}
+
+.tracklist-row {
+    display: flex;
+    height: 60px;
+    &:hover {
+        .tracklist-icon {
+            &::before {
+                content: "\f04b";
+            }
+        }
+        .tracklist-music-icon {
+            opacity: 1;
+        }
+    }
+}
+
+.tracklist-row:hover {
+    background-color: rgba(0,0,0,.3);
+}
+
+.tracklist-col {
+    display: block;
+    height: 4.56em;
+}
+
+.tracklist-col.position-outer {
+    letter-spacing: 0;
+    width: 3em;
+    text-align: right;
+    padding-right: 1em;
+}
+
+.tracklist-col.name {
+    flex: 1;
+    width: 0;
+    overflow: hidden;
+    padding-right: 1px;
+    margin-right: -1px;
+    text-align: left;
+}
+
+.tracklist-top-align {
+    margin-top: .7em;
+}
+
+.ellipsis-one-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 1px;
+    margin-right: -1px;
+}
+
+.tracklist-name {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: .015em;
+    color: #fff;
+}
+
+.tracklist-name-wrapper .second-line {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.tracklist-music-icon {
+    color: #fff;
+    opacity: .6;
+}
+
+.tracklist-col-duration {
+    text-align: right;
+    padding-right: 1em;
+    opacity: .6;
+}
+
+.tracklist-icon {
+    &::before {
+        content: "\f001";
+    }
+}
+

@@ -32,9 +32,10 @@ class PlaylistDetail extends React.Component {
                     </button>
                 </div>
 
-                <div className="song-list">
-
-
+                <div className="tracklist-container">
+                    {/* <ol>
+                        {songItems}
+                    </ol> */}
                 </div>
             </div>
         )
