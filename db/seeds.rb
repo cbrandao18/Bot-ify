@@ -451,10 +451,10 @@ artist7_album1_song11_mp3 = open("https://botify-dev.s3.us-east-2.amazonaws.com/
 artist7_album1_song11.track.attach(io: artist7_album1_song11_mp3, filename: '11 Stars.mp3')
 
 
-playlist1 = Playlist.new(title: "beep boop", owner_id: robot.id)
-PlaylistSong.new(playlist_id: playlist1.id, song_id: artist1_album1_song1.id)
-PlaylistSong.new(playlist_id: playlist1.id, song_id: artist6_album1_song2.id)
-PlaylistSong.new(playlist_id: playlist1.id, song_id: artist7_album1_song1.id)
-PlaylistSong.new(playlist_id: playlist1.id, song_id: artist7_album1_song9.id)
-PlaylistSong.new(playlist_id: playlist1.id, song_id: artist3_album1_song5.id)
+playlist1 = Playlist.create(title: "beep boop", owner_id: robot.id)
+PlaylistSong.create(playlist_id: playlist1.id, song_id: artist1_album1_song1.id)
+PlaylistSong.create(playlist_id: playlist1.id, song_id: artist6_album1_song2.id)
+PlaylistSong.create(playlist_id: playlist1.id, song_id: artist7_album1_song1.id)
+PlaylistSong.create(playlist_id: playlist1.id, song_id: artist7_album1_song9.id)
+PlaylistSong.create(playlist_id: playlist1.id, song_id: artist3_album1_song5.id)
 
