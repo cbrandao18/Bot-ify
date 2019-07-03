@@ -6,4 +6,8 @@ class Playlist < ApplicationRecord
     foreign_key: :owner_id,
     class_name: 'User'
     
+    has_many :playlist_songs
+
+    has_many :songs, 
+    through: :playlist_songs
 end

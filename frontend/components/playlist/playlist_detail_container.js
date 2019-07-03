@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import PlaylistDetail from './playlist_detail'
 import { fetchPlaylist, deletePlaylist } from '../../actions/playlist_actions'
+import { isPlaying, setSongQueue } from '../../actions/now_playing_actions'
 
 const mapStateToProps = (state, ownProps) => {
     const playlist = state.entities.playlists[ownProps.match.params.playlistId];
@@ -10,6 +11,9 @@ const mapStateToProps = (state, ownProps) => {
     }
     return {
         playlist: playlist,
+        songs: state.entities.songs,
+        albums: state.entities.albums,
+        artists: state.entities.artists,
         user: user
     }
 }
@@ -17,7 +21,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
-        deletePlaylist: (id) => dispatch(deletePlaylist(id))
+        deletePlaylist: (id) => dispatch(deletePlaylist(id)),
+        isPlaying: () => dispatch(isPlaying()),
+        setSongQueue: (queue) => dispatch(setSongQueue(queue))
     }
 }
 

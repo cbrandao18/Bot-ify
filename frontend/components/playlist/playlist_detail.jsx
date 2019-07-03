@@ -1,4 +1,5 @@
 import React from 'react'
+import SongIndexItem from '../song/song_index_item'
 
 class PlaylistDetail extends React.Component {
     constructor(props){
@@ -19,6 +20,25 @@ class PlaylistDetail extends React.Component {
             return (<></>)
         }
 
+        let songItems = <></>
+
+        if (this.props.playlist.song_ids && this.props.playlist.song_ids.length > 0) {
+            songItems = this.props.playlist.song_ids.map(songId => {
+                let song = this.props.songs[songId];
+                let album = this.props.albums[song.album_id]
+                let artist = this.props.artists[album.artist_id]
+                return (
+                    <SongIndexItem
+                        key={`song-${songId}`}
+                        song={song}
+                        artist={artist}
+                        isPlaying={this.props.isPlaying}
+                        setSongQueue={this.props.setSongQueue}
+                    />
+                )
+            })
+        }
+        
         return (
             <div className="playlist-detail-wrapper">
                 <div className="playlist-detail-info">
@@ -33,9 +53,7 @@ class PlaylistDetail extends React.Component {
                 </div>
 
                 <div className="tracklist-container">
-                    {/* <ol>
-                        {songItems}
-                    </ol> */}
+                    {songItems}
                 </div>
             </div>
         )

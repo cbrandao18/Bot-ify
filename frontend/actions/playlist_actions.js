@@ -25,6 +25,14 @@ export const removePlaylist = (playlistId) => {
     }
 }
 
+export const addSongToPlaylist = (data) => (dispatch) => {
+    return PlaylistApiUtil.addSongToPlaylist(data)
+}
+
+export const removeSongFromPlaylist = (data) => (dispatch) => {
+    return PlaylistApiUtil.removeSongFromPlaylist(data)
+}
+
 export const fetchPlaylists = () => (dispatch) => {
     return PlaylistApiUtil.fetchPlaylists()
         .then(playlists => dispatch(receiveAllPlaylists(playlists)))

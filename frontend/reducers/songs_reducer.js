@@ -6,6 +6,8 @@ import {
 
 import { RECEIVE_ALBUM } from '../actions/album_actions'
 
+import { RECEIVE_PLAYLIST } from '../actions/playlist_actions'
+
 const songsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_SONGS:
@@ -13,6 +15,8 @@ const songsReducer = (state = {}, action) => {
         case RECEIVE_SONG:
             return merge({}, state, { [action.song.id]: action.song })
         case RECEIVE_ALBUM:
+            return merge({}, state, action.payload.songs)
+        case RECEIVE_PLAYLIST:
             return merge({}, state, action.payload.songs)
         default:
             return state;

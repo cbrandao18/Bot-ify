@@ -6,7 +6,7 @@ import { fetchArtists, fetchArtist } from './actions/artist_actions'
 import { fetchAlbums, fetchAlbum } from './actions/album_actions'
 import { fetchSongs, fetchSong } from './actions/song_actions'
 import { isPlaying } from './actions/now_playing_actions'
-
+import { addSongToPlaylist, removeSongFromPlaylist } from './util/playlist_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchAlbum = fetchAlbum
     window.fetchSongs = fetchSongs
     window.fetchSong = fetchSong
+
+    window.addSongToPlaylist = addSongToPlaylist
+    window.removeSongFromPlaylist = removeSongFromPlaylist
 
     window.isPlaying = isPlaying;
 

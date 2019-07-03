@@ -11,6 +11,8 @@
     background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
     padding-left: 240px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .playlist-detail-info {
