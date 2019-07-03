@@ -49,6 +49,8 @@
     color: white;
     // float: left;
     position: relative;
+    overflow-y: scroll;
+    height: calc( 100% - 91px);
 }
 
 .tracklist-row {
@@ -195,6 +197,10 @@
     width: 170px;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.dropdown-content h4 {
+    margin-bottom: 0px;
 }
 
 .dropdown-close {

@@ -14,6 +14,7 @@ class SongIndex extends React.Component{
         this.props.fetchArtists()
             .then(() => this.props.fetchAlbums())
             .then(() => this.props.fetchSongs())
+            .then(() => this.props.fetchPlaylists())
             .then(() => this.setState({ loading: false }))
     }
 
@@ -34,6 +35,8 @@ class SongIndex extends React.Component{
                     artist={artist}
                     isPlaying={this.props.isPlaying}
                     setSongQueue={this.props.setSongQueue}
+                    playlists={this.props.playlists}
+                    addSongToPlaylist={this.props.addSongToPlaylist}
                 />
             )
         })

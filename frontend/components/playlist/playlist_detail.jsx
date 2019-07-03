@@ -4,10 +4,16 @@ import SongIndexItem from '../song/song_index_item'
 class PlaylistDetail extends React.Component {
     constructor(props){
         super(props)
+
+        this.state = {
+            loading: true
+        }
     }
 
     componentDidMount(){
-        this.props.fetchPlaylist(this.props.match.params.playlistId)
+        this.props.fetchPlaylists()
+            .then(() => this.props.fetchPlaylist(this.props.match.params.playlistId))
+            .then(() => this.setState({loading: false}))
     }
 
     handleDelete(){
@@ -16,7 +22,7 @@ class PlaylistDetail extends React.Component {
     }
 
     render(){
-        if (!this.props.playlist){
+        if (this.state.loading){
             return (<></>)
         }
 
@@ -34,6 +40,8 @@ class PlaylistDetail extends React.Component {
                         artist={artist}
                         isPlaying={this.props.isPlaying}
                         setSongQueue={this.props.setSongQueue}
+                        playlists={this.props.playlists}
+                        addSongToPlaylist={this.props.addSongToPlaylist}
                     />
                 )
             })

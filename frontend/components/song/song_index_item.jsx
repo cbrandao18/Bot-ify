@@ -23,8 +23,23 @@ class SongIndexItem extends React.Component {
 
     }
 
+    handleAddSong(data){
+        this.props.addSongToPlaylist(data);
+        this.toggleAddPlaylistDropdown();
+    }
+
     render(){
-        let dropdownClass = this.state.dropdownActive ? "dropdown-content active" : "dropdown-content"
+
+        let dropdownClass = this.state.dropdownActive ? "dropdown-content active" : "dropdown-content";
+        
+        let playlistItems = Object.keys(this.props.playlists).map(playlistId => {
+            let data = {song_id: this.props.song.id, playlist_id: playlistId};
+            return <button 
+                        key={`playlist-${playlistId}`}
+                        onClick={this.handleAddSong.bind(this, data)}>
+                            {this.props.playlists[playlistId].title}
+                    </button>
+        })
 
         return (
             <div className="tracklist-row">
@@ -65,9 +80,7 @@ class SongIndexItem extends React.Component {
                             onClick={this.toggleAddPlaylistDropdown}
                             className="dropdown-close">x</button>
                         <h4>Add to Playlist</h4>
-                        <button>playlist1 playlist1 playlist1 playlist1 playlist1 playlist1</button>
-                        <button>playlist2</button>
-                        <button>playlist2</button>
+                        {playlistItems}
                     </div>
                 </div>
 

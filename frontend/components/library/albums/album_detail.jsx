@@ -4,8 +4,16 @@ import SongIndexItem from '../../song/song_index_item';
 
 class AlbumDetail extends React.Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            loading: true
+        }
+    }
     componentDidMount(){
-        this.props.fetchAlbum(this.props.match.params.albumId);
+        this.props.fetchAlbum(this.props.match.params.albumId)
+            .then(() => this.props.fetchPlaylists())
+            .then(() => this.setState({loading: false}))
     }
 
     render(){
@@ -17,10 +25,14 @@ class AlbumDetail extends React.Component {
             return <></>
         }
 
+        if (this.state.loading){
+            return <></>
+        }
+
         let albumImageStyle = {
             backgroundImage: `url('${this.props.album.cover}')`
         }
-
+        
         let songItems = Object.keys(this.props.songs).map(songId => {
             let song = this.props.songs[songId];
             let artist = this.props.artist
@@ -31,6 +43,8 @@ class AlbumDetail extends React.Component {
                     artist={artist}
                     isPlaying={this.props.isPlaying}
                     setSongQueue={this.props.setSongQueue}
+                    playlists={this.props.playlists}
+                    addSongToPlaylist={this.props.addSongToPlaylist}
                 />
             )
         })
