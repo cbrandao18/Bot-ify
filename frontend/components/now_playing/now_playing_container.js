@@ -6,11 +6,10 @@ import { fetchAlbum } from '../../actions/album_actions'
 import { fetchArtist } from '../../actions/artist_actions'
 
 const mapStateToProps = (state) => {
-
     let currentSong = {};
     let currentSongAlbum = {};
     let currentArtist = {};
-    if (state.ui.queue.length !== 0){
+    if (Object.keys(state.ui.queue).length !== 0){
         let currentSongId = state.ui.queue[0];
         currentSong = state.entities.songs[currentSongId];
         currentSongAlbum = state.entities.albums[currentSong.album_id]
