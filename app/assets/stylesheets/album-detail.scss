@@ -63,6 +63,9 @@
         .tracklist-music-icon {
             opacity: 1;
         }
+        .tracklist-col.add{
+            display: block;
+        }
     }
     &.active {
         color: #1ed760
@@ -128,6 +131,7 @@
     text-align: right;
     padding-right: 1em;
     opacity: .6;
+    width: 25px;
 }
 
 .tracklist-icon {
@@ -136,3 +140,64 @@
     }
 }
 
+.tracklist-col.add {
+    text-align: right;
+    padding-right: 1em;
+    min-width: 65px;
+    display: none;
+}
+
+.fa-plus {
+    opacity: .6
+}
+
+.fa-plus:hover {
+    opacity: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #282828;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    left: -200px;
+    text-align: left;
+}
+
+.dropdown-content.active {
+    display:block;
+}
+
+.dropdown-content button,
+.dropdown-content h4 {
+    width: 100%;
+    padding: 3px 20px;
+    clear: both;
+    line-height: 32px;
+    white-space: nowrap;
+    background: 0 0;
+    border: 0;
+    color: #b3b3b3;
+    letter-spacing: .015em;
+}
+
+.dropdown-content button {
+    text-overflow: ellipsis;
+    width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dropdown-close {
+    position: inherit;
+    text-align: right;
+}

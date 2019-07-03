@@ -5,25 +5,23 @@ import SongIndexItem from '../../song/song_index_item';
 class SongIndex extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            loading: true
+        }
     }
 
     componentDidMount(){
-        this.props.fetchArtists();
-        this.props.fetchAlbums();
-        this.props.fetchSongs();
+        this.props.fetchArtists()
+            .then(() => this.props.fetchAlbums())
+            .then(() => this.props.fetchSongs())
+            .then(() => this.setState({ loading: false }))
     }
 
     render(){
-        if (Object.keys(this.props.songs).length === 0) {
+
+        if (this.state.loading) {
             return <></>
         }
-        if (Object.keys(this.props.albums).length === 0) {
-            return <></>
-        }
-        if (Object.keys(this.props.artists).length === 0) {
-            return <></>
-        }
-        console.log(this.props)
 
         let songItems = Object.keys(this.props.songs).map(songId => {
             let song = this.props.songs[songId];
