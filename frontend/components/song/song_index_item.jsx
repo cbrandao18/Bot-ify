@@ -28,6 +28,10 @@ class SongIndexItem extends React.Component {
         this.toggleAddPlaylistDropdown();
     }
 
+    handleRemoveSong(songId){
+        this.props.removeSongFromPlaylist({playlistId: this.props.playlistId, songId})
+    }
+
     render(){
 
         let dropdownClass = this.state.dropdownActive ? "dropdown-content active" : "dropdown-content";
@@ -40,6 +44,25 @@ class SongIndexItem extends React.Component {
                             {this.props.playlists[playlistId].title}
                     </button>
         })
+
+        let removeFromPlaylist = () => {
+            return <></>
+        }
+
+        if (this.props.playlistId){
+            removeFromPlaylist = (songId) => {
+                return (
+                    <div className="tracklist-col remove">
+                        <div className="tracklist-top-align">
+                            <button
+                                onClick={this.handleRemoveSong.bind(this, songId)}>
+                                <i className="far fa-times-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                )
+            }
+        }
 
         return (
             <div className="tracklist-row">
@@ -66,6 +89,8 @@ class SongIndexItem extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                {removeFromPlaylist(this.props.song.id)}
 
                 <div className="tracklist-col add">
                     <div className="tracklist-top-align">

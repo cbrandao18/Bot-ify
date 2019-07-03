@@ -1,5 +1,6 @@
 import React from 'react'
 import SongIndexItem from '../song/song_index_item'
+import { withRouter } from 'react-router';
 
 class PlaylistDetail extends React.Component {
     constructor(props){
@@ -26,8 +27,12 @@ class PlaylistDetail extends React.Component {
             return (<></>)
         }
 
-        let songItems = <></>
+        if (!this.props.playlist){
+            return (<></>)
+        }
 
+        let songItems = <></>
+        // debugger
         if (this.props.playlist.song_ids && this.props.playlist.song_ids.length > 0) {
             songItems = this.props.playlist.song_ids.map(songId => {
                 let song = this.props.songs[songId];
@@ -42,6 +47,8 @@ class PlaylistDetail extends React.Component {
                         setSongQueue={this.props.setSongQueue}
                         playlists={this.props.playlists}
                         addSongToPlaylist={this.props.addSongToPlaylist}
+                        removeSongFromPlaylist={this.props.removeSongFromPlaylist}
+                        playlistId={this.props.match.params.playlistId}
                     />
                 )
             })
@@ -68,4 +75,4 @@ class PlaylistDetail extends React.Component {
     }
 }
 
-export default PlaylistDetail;
+export default withRouter(PlaylistDetail);

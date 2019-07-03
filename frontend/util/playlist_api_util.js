@@ -36,9 +36,9 @@ export const addSongToPlaylist = (payload) => {
     })
 }
 
-export const removeSongFromPlaylist = (id) => {
+export const removeSongFromPlaylist = (payload) => {
     return $.ajax({
-        url: `/api/playlist_songs/${id}`,
-        method: 'DELETE'
+        url: `/api/playlists/${payload.playlistId}/playlist_songs/${payload.songId}`,
+        method: 'DELETE',
     })
 }
