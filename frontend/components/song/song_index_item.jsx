@@ -8,12 +8,14 @@ class SongIndexItem extends React.Component {
         super(props)
 
         this.state = {
-            dropdownActive: false
+            dropdownActive: false,
+            songActive: false
         }
         this.toggleAddPlaylistDropdown = this.toggleAddPlaylistDropdown.bind(this)
     }
 
     togglePlayAndSetQueue(){
+        this.setState({songActive: !this.state.songActive})
         this.props.setSongQueue([this.props.song.id])
         this.props.isPlaying()
     }
@@ -33,7 +35,6 @@ class SongIndexItem extends React.Component {
     }
 
     render(){
-
         let dropdownClass = this.state.dropdownActive ? "dropdown-content active" : "dropdown-content";
         
         let playlistItems = Object.keys(this.props.playlists).map(playlistId => {
@@ -64,14 +65,16 @@ class SongIndexItem extends React.Component {
             }
         }
 
+        let tracklistRowClass = this.state.songActive ? "tracklist-row active" : "tracklist-row"
+        let playPauseIconClass = this.state.songActive ? "fas fa-pause" : "fas tracklist-icon"
         return (
-            <div className="tracklist-row">
+            <div className={tracklistRowClass}>
                 
                 {/* icons */}
                 <div className="tracklist-col position-outer">
                     <div className="tracklist-music-icon tracklist-top-align">
                         <button onClick={this.togglePlayAndSetQueue.bind(this)}>
-                            <i className="fas tracklist-icon"></i>
+                            <i className={playPauseIconClass}></i>
                         </button>
                     </div>
                 </div>

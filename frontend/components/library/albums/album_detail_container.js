@@ -25,7 +25,8 @@ const mapStateToProps = (state, ownProps) => {
         album: state.entities.albums[ownProps.match.params.albumId],
         artist: artist,
         songs: songObj,
-        playlists: state.entities.playlists
+        playlists: state.entities.playlists,
+        ui: state.ui
     }
 }
 
