@@ -9,7 +9,11 @@ const uiReducer = (state = {isPlaying: false, queue: []}, action) => {
         case RECEIVE_SONG_QUEUE:
             return Object.assign({}, state, {queue: action.queue})
         case IS_PLAYING:
-            return Object.assign({}, state, {isPlaying: !state.isPlaying})
+            let isPlaying = !state.isPlaying;
+            if (state.queue.length === 0){
+                isPlaying = false;
+            }
+            return Object.assign({}, state, { isPlaying: isPlaying })
         default:
             return state;
     }
