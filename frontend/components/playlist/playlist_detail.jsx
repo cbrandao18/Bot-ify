@@ -32,7 +32,6 @@ class PlaylistDetail extends React.Component {
         }
 
         let songItems = <></>
-        // debugger
         if (this.props.playlist.song_ids && this.props.playlist.song_ids.length > 0) {
             songItems = this.props.playlist.song_ids.map(songId => {
                 let song = this.props.songs[songId];

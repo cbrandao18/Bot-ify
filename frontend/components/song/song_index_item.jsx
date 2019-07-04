@@ -70,7 +70,7 @@ class SongIndexItem extends React.Component {
                 {/* icons */}
                 <div className="tracklist-col position-outer">
                     <div className="tracklist-music-icon tracklist-top-align">
-                        <button>
+                        <button onClick={this.togglePlayAndSetQueue.bind(this)}>
                             <i className="fas tracklist-icon"></i>
                         </button>
                     </div>
