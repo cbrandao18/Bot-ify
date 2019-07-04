@@ -1,11 +1,18 @@
-import { combineReducers } from 'redux';
 
-import isPlayingReducer from './now_playing_reducer';
-import queueReducer from './queue_reducer';
+import {
+    RECEIVE_SONG_QUEUE,
+    IS_PLAYING
+} from '../actions/now_playing_actions';
 
-const uiReducer = combineReducers({
-    isPlaying: isPlayingReducer,
-    queue: queueReducer
-});
+const uiReducer = (state = {isPlaying: false, queue: []}, action) => {
+    switch (action.type) {
+        case RECEIVE_SONG_QUEUE:
+            return Object.assign({}, state, {queue: action.queue})
+        case IS_PLAYING:
+            return Object.assign({}, state, {isPlaying: !state.isPlaying})
+        default:
+            return state;
+    }
+}
 
 export default uiReducer;
