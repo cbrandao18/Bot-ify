@@ -1,6 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import SecondsToMins from './secondsToMins'
+import {connect} from 'react-redux'
+import { startPlaying, stopPlaying } from '../../actions/now_playing_actions'
+
+
+const msp = (state) => {
+    return {
+
+    }
+}
+
+const mdp = (dispatch) => {
+    return {
+        startPlaying: () => dispatch(startPlaying()),
+        stopPlaying: () => dispatch(stopPlaying())
+    }
+}
+
 
 class SongIndexItem extends React.Component {
 
@@ -13,9 +30,14 @@ class SongIndexItem extends React.Component {
         this.toggleAddPlaylistDropdown = this.toggleAddPlaylistDropdown.bind(this)
     }
 
-    togglePlayAndSetQueue(){
-        this.props.setSongQueue([this.props.song.id])
-        this.props.fetchSong(this.props.song.id)
+    togglePlayAndSetQueue(thisSongIsPlaying){
+        if (!thisSongIsPlaying){
+            this.props.setSongQueue([this.props.song.id])
+            this.props.fetchSong(this.props.song.id)
+            this.props.startPlaying();
+        }  else {
+            this.props.stopPlaying();
+        }
     }
 
     toggleAddPlaylistDropdown(){
@@ -73,7 +95,7 @@ class SongIndexItem extends React.Component {
                 {/* icons */}
                 <div className="tracklist-col position-outer">
                     <div className="tracklist-music-icon tracklist-top-align">
-                        <button onClick={this.togglePlayAndSetQueue.bind(this)}>
+                        <button onClick={this.togglePlayAndSetQueue.bind(this, thisSongIsPlaying)}>
                             <i className={playPauseIconClass}></i>
                         </button>
                     </div>
@@ -125,4 +147,4 @@ class SongIndexItem extends React.Component {
     }
 }
 
-export default SongIndexItem;
+export default connect(msp, mdp)(SongIndexItem);
