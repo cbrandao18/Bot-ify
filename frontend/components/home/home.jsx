@@ -26,13 +26,22 @@ const mdp = (dispatch) => {
 }
 
 class Home extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading: true
+        }
+    }
     componentDidMount() {
-        this.props.fetchPlaylists();
-        this.props.fetchAlbums();
-        this.props.fetchArtists();
+        this.props.fetchPlaylists()
+            .then(() => this.props.fetchAlbums())
+            .then(() => this.props.fetchArtists())
+            .then(() => this.setState({loading: false}))
     }
 
     render(){
+        if (this.state.loading) return <></>
         return (
             <div className="home-container">
                 <h2>{this.props.current_user.username}'s playlists</h2>
