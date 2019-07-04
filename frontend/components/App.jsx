@@ -14,6 +14,7 @@ import AlbumIndexContainer from './library/albums/album_index_container';
 import AlbumDetailContainer from './library/albums/album_detail_container';
 import NowPlayingContainer from './now_playing/now_playing_container';
 import SongIndexContainer from './library/songs/song_index_container';
+import Home from './home/home'
 
 const App = () => (
     <div>
@@ -25,6 +26,7 @@ const App = () => (
             <AuthRoute exact path="/" component={Splash} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <ProtectedRoute path="/browse/featured" component={Home} />
             <ProtectedRoute path="/browse/library/playlists" component={LibraryContainer} />
             <ProtectedRoute path="/browse/library/playlist/create" component={CreatePlaylistModalContainer} />
             <ProtectedRoute path="/browse/library/artists" component={ArtistIndexContainer} />

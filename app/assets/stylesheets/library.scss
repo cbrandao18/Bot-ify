@@ -2,7 +2,8 @@
 .artist-index-container,
 .artist-detail-container,
 .album-index-container,
-.song-index-container {
+.song-index-container,
+.home-container {
     width: calc( 100% - 240px);
     height: calc( 100% - 91px);
     background-size: cover;
@@ -16,6 +17,10 @@
     padding-left: 230px;
     text-align: center;
     overflow-y: scroll;
+}
+
+.home-container {
+    background-image: linear-gradient(to right bottom, rgb(15, 94, 138), rgb(0, 0, 0)), linear-gradient(transparent, rgb(0, 0, 0) 70%);
 }
 
 .artist-index-container,
