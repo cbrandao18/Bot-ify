@@ -14,6 +14,7 @@ class PlaylistDetail extends React.Component {
     componentDidMount(){
         this.props.fetchPlaylists()
             .then(() => this.props.fetchPlaylist(this.props.match.params.playlistId))
+            .then(() => this.props.fetchArtists())
             .then(() => this.setState({loading: false}))
     }
 
