@@ -32,7 +32,7 @@ Botify is a full stack clone of Spotify. Create your own playlist, browse albums
 ![SignUp](./app/assets/images/screenshots/signup.png)
 
 * Create playlists and add songs to it from anywhere!
-![Playlists](./app/assets/images/screenshots/playlists.gif)
+![Playlists](./app/assets/images/screenshots/playlists-3.gif)
 
 * Browse albums, artists, and songs
 ![Browse](./app/assets/images/screenshots/browse.png)
