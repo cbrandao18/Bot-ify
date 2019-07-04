@@ -27,7 +27,7 @@ class CreatePlaylistModal extends React.Component{
             <div className="playlist-modal-wrapper">
                 <div className="playlist-form-wrapper">
                     <div className="playlist-close-wrapper">
-                        <Link className="playlist-close" to={'/browse/library'}>X</Link>
+                        <Link className="playlist-close" to={'/browse/library/playlists'}>X</Link>
                     </div>
 
                     <h1>Create new playlist</h1>
