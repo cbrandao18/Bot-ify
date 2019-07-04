@@ -1,6 +1,6 @@
 .album-detail-wrapper {
     width: calc( 100% - 240px);
-    height: 100vh;
+    height: calc( 100% - 91px);
     background-size: cover;
     background-repeat: no-repeat;
     left: 0;
@@ -13,6 +13,7 @@
     text-align: center;
     display: flex;
     flex-direction: row;
+    overflow-y: scroll;
 }
 
 .album-detail-info {
@@ -47,8 +48,12 @@
     width: 1000px;
     padding: 50px 50px 50px 0px;
     color: white;
-    // float: left;
     position: relative;
+}
+
+.song-index-container .tracklist-container {
+    max-width: 1000px;
+    width: auto;
 }
 
 .tracklist-row {
