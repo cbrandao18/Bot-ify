@@ -4,9 +4,12 @@ import {Link} from 'react-router-dom'
 class NowPlaying extends React.Component {
     constructor(props) {
         super(props)
+
     }
 
     componentDidMount(){
+        let musicPlayer = this.refs.musicPlayer;
+
         if (!this.props.currentSong.album_cover){
             if (this.props.queue.length > 0){
                 this.props.fetchSong(this.props.queue[0])
@@ -20,6 +23,16 @@ class NowPlaying extends React.Component {
         if (Object.keys(this.props.currentAlbum).length > 0) {
             this.props.fetchArtist(this.props.currentAlbum.artist_id)
         }
+    }
+
+
+    togglePlayPause(){
+        this.props.isPlaying()
+        // if (!this.props.isPlayingBool) {
+        //     this.refs.musicPlayer.play();
+        // } else {
+        //     this.refs.musicPlayer.pause();
+        // }
     }
 
     render() {
@@ -44,7 +57,24 @@ class NowPlaying extends React.Component {
         }
 
         let playPause = this.props.isPlayingBool ? "fas fa-pause control-button" : "far fa-play-circle control-button";
+        // src = { this.props.currentSong.track }
+        // if (this.props.isPlayingBool && !this.refs.musicPlayer.)
+        if (this.refs.musicPlayer){
+            if (this.props.currentSong.track && this.refs.musicPlayer.src != this.props.currentSong.track){
+                this.refs.musicPlayer.src = this.props.currentSong.track;
+            }
+    
+            if (this.props.isPlayingBool && !this.refs.musicPlayer.playing){
+                this.refs.musicPlayer.play().catch((e) => {
+                    console.log(e)
+                })
+            } else if (!this.props.isPlayingBool && this.refs.musicPlayer.playing){
+                this.refs.musicPlayer.pause();
+            }
+        }
 
+
+        console.log(this.props)
         return (
             <div className="now-playing-container">
                 <div className="now-playing-bar">
@@ -57,7 +87,7 @@ class NowPlaying extends React.Component {
                                 <button><i className="fas fa-random control-button"></i></button>
                                 <button><i className="fas fa-backward control-button"></i></button>
                                 <button
-                                    onClick={this.props.isPlaying}
+                                    onClick={this.togglePlayPause.bind(this)}
                                 ><i className={playPause}></i></button>
                                 <button><i className="fas fa-forward control-button"></i></button>
                                 <button><i className="fas fa-redo-alt control-button"></i></button>
@@ -79,6 +109,9 @@ class NowPlaying extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                {/* Audio */}
+                <audio ref="musicPlayer"></audio>
             </div>
         )
     }

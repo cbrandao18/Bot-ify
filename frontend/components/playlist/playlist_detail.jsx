@@ -48,6 +48,8 @@ class PlaylistDetail extends React.Component {
                         addSongToPlaylist={this.props.addSongToPlaylist}
                         removeSongFromPlaylist={this.props.removeSongFromPlaylist}
                         playlistId={this.props.match.params.playlistId}
+                        fetchSong={this.props.fetchSong}
+                        ui={this.props.ui}
                     />
                 )
             })

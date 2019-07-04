@@ -8,27 +8,14 @@ class SongIndexItem extends React.Component {
         super(props)
 
         this.state = {
-            dropdownActive: false,
-            songActive: false,
-            songPlaying: false
+            dropdownActive: false
         }
         this.toggleAddPlaylistDropdown = this.toggleAddPlaylistDropdown.bind(this)
     }
 
-    componentDidMount(){
-        let musicPlayer = this.refs.musicPlayer;
-    }
-
     togglePlayAndSetQueue(){
-        this.setState({ songActive: !this.state.songActive })
-        this.setState({ songPlaying: !this.state.songPlaying})
         this.props.setSongQueue([this.props.song.id])
-        this.props.isPlaying()
-        if (!this.state.songPlaying){
-            this.refs.musicPlayer.play();
-        } else {
-            this.refs.musicPlayer.pause();
-        }
+        this.props.fetchSong(this.props.song.id)
     }
 
     toggleAddPlaylistDropdown(){
@@ -76,8 +63,10 @@ class SongIndexItem extends React.Component {
             }
         }
 
-        let tracklistRowClass = this.state.songActive ? "tracklist-row active" : "tracklist-row"
-        let playPauseIconClass = this.state.songActive ? "fas fa-pause" : "fas tracklist-icon"
+        const thisSongIsPlaying = this.props.ui.isPlaying && this.props.ui.queue[0] === this.props.song.id
+        let tracklistRowClass = thisSongIsPlaying ? "tracklist-row active" : "tracklist-row"
+        let playPauseIconClass = thisSongIsPlaying ? "fas fa-pause" : "fas tracklist-icon"
+
         return (
             <div className={tracklistRowClass}>
                 
@@ -130,8 +119,7 @@ class SongIndexItem extends React.Component {
                     </div>
                 </div>
 
-                {/* Audio */}
-                <audio src={this.props.song.track} ref="musicPlayer"></audio>
+               
             </div>
         )
     }
