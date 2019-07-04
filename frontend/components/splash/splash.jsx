@@ -51,8 +51,7 @@ class Splash extends React.Component {
                     <div className="column-big">
                         <p className="col-header">About Me</p>
                         <p className="about-me-text">
-                            This app was developed by Christie Brandao as the 
-                            final project for the App Academy coding bootcamp.
+                            Developed by: Christie Brandao
                         </p>
                         <ul>
                             <li>
