@@ -147,15 +147,17 @@
 .tracklist-col.remove {
     text-align: right;
     padding-right: 1em;
-    min-width: 65px;
+    min-width: 20px;
     display: none;
 }
 
-.fa-plus {
+.fa-plus,
+.fa-times-circle {
     opacity: .6
 }
 
-.fa-plus:hover {
+.fa-plus:hover,
+.fa-times-circle:hover {
     opacity: 1;
 }
 
