@@ -1,24 +1,46 @@
-# README
+# Botify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Botify Live Link](https://bot-ify.herokuapp.com/#/)
+![Botify Splash](./app/assets/images/screenshots/splash.png)
 
-Things you may want to cover:
+## Overview
 
-* Ruby version
+Botify is a full stack clone of Spotify. Create your own playlist, browse albums and artists through your library, and stream any song!
 
-* System dependencies
+## Technologies
 
-* Configuration
+### Frontend
+* React
+* Redux
+* Javascript
+* Sass
 
-* Database creation
+### Backend
+* Ruby on Rails
+* PostgreSQL
+* AWS S3
 
-* Database initialization
+### Hosting
+* Heroku
 
-* How to run the test suite
+### Libraries
+* jQuery for API calls
+* BCrypt for user authentication
 
-* Services (job queues, cache servers, search engines, etc.)
+## Key Features
+* Sign up and log in
+![SignUp](./app/assets/images/screenshots/signup.png)
 
-* Deployment instructions
+* Create playlists and add songs to it from anywhere!
+![Playlists](./app/assets/images/screenshots/playlists.gif)
 
-* ...
+* Browse albums, artists, and songs
+![Browse](./app/assets/images/screenshots/browse.png)
+
+* Stay listening to your current song throughout navigation
+![Playbar](./app/assets/images/screenshots/playbar.gif)
+
+## To Do
+* Auto-populate the queue of songs
+* Search funtionality
+* Follow funtionality
