@@ -28,11 +28,6 @@ class NowPlaying extends React.Component {
 
     togglePlayPause(){
         this.props.isPlaying()
-        // if (!this.props.isPlayingBool) {
-        //     this.refs.musicPlayer.play();
-        // } else {
-        //     this.refs.musicPlayer.pause();
-        // }
     }
 
     render() {
@@ -57,24 +52,19 @@ class NowPlaying extends React.Component {
         }
 
         let playPause = this.props.isPlayingBool ? "fas fa-pause control-button" : "far fa-play-circle control-button";
-        // src = { this.props.currentSong.track }
-        // if (this.props.isPlayingBool && !this.refs.musicPlayer.)
+
         if (this.refs.musicPlayer){
             if (this.props.currentSong.track && this.refs.musicPlayer.src != this.props.currentSong.track){
                 this.refs.musicPlayer.src = this.props.currentSong.track;
             }
     
             if (this.props.isPlayingBool && !this.refs.musicPlayer.playing){
-                this.refs.musicPlayer.play().catch((e) => {
-                    console.log(e)
-                })
+                this.refs.musicPlayer.play();
             } else if (!this.props.isPlayingBool && this.refs.musicPlayer.playing){
                 this.refs.musicPlayer.pause();
             }
         }
 
-
-        console.log(this.props)
         return (
             <div className="now-playing-container">
                 <div className="now-playing-bar">
