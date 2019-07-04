@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
         currentArtist = state.entities.artists[currentSongAlbum.artist_id]
     }
     return {
-        isPlaying: state.ui.isPlaying,
+        isPlayingBool: state.ui.isPlaying,
         queue: state.ui.queue,
         currentSong: currentSong,
         currentAlbum: currentSongAlbum,

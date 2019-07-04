@@ -43,6 +43,8 @@ class NowPlaying extends React.Component {
             )
         }
 
+        let playPause = this.props.isPlayingBool ? "fas fa-pause control-button" : "far fa-play-circle control-button";
+
         return (
             <div className="now-playing-container">
                 <div className="now-playing-bar">
@@ -54,7 +56,9 @@ class NowPlaying extends React.Component {
                             <div className="play-control-buttons">
                                 <button><i className="fas fa-random control-button"></i></button>
                                 <button><i className="fas fa-backward control-button"></i></button>
-                                <button><i className="far fa-play-circle control-button"></i></button>
+                                <button
+                                    onClick={this.props.isPlaying}
+                                ><i className={playPause}></i></button>
                                 <button><i className="fas fa-forward control-button"></i></button>
                                 <button><i className="fas fa-redo-alt control-button"></i></button>
                             </div>
