@@ -9,15 +9,26 @@ class SongIndexItem extends React.Component {
 
         this.state = {
             dropdownActive: false,
-            songActive: false
+            songActive: false,
+            songPlaying: false
         }
         this.toggleAddPlaylistDropdown = this.toggleAddPlaylistDropdown.bind(this)
     }
 
+    componentDidMount(){
+        let musicPlayer = this.refs.musicPlayer;
+    }
+
     togglePlayAndSetQueue(){
-        this.setState({songActive: !this.state.songActive})
+        this.setState({ songActive: !this.state.songActive })
+        this.setState({ songPlaying: !this.state.songPlaying})
         this.props.setSongQueue([this.props.song.id])
         this.props.isPlaying()
+        if (!this.state.songPlaying){
+            this.refs.musicPlayer.play();
+        } else {
+            this.refs.musicPlayer.pause();
+        }
     }
 
     toggleAddPlaylistDropdown(){
@@ -118,6 +129,9 @@ class SongIndexItem extends React.Component {
                         <SecondsToMins totalSeconds={this.props.song.length}/>
                     </div>
                 </div>
+
+                {/* Audio */}
+                <audio src={this.props.song.track} ref="musicPlayer"></audio>
             </div>
         )
     }
