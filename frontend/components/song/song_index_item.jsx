@@ -143,8 +143,6 @@ class SongIndexItem extends React.Component {
                         <SecondsToMins totalSeconds={this.props.song.length}/>
                     </div>
                 </div>
-
-               
             </div>
         )
     }

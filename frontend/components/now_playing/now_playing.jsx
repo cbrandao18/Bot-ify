@@ -4,11 +4,10 @@ import {Link} from 'react-router-dom'
 class NowPlaying extends React.Component {
     constructor(props) {
         super(props)
-
+        this.audioObj = new Audio();
     }
 
     componentDidMount(){
-        let musicPlayer = this.refs.musicPlayer;
 
         if (!this.props.currentSong.album_cover){
             if (this.props.queue.length > 0){
@@ -31,7 +30,6 @@ class NowPlaying extends React.Component {
     }
 
     render() {
-        if (!this.props.currentSong) return <></>
         let songInfo;
         if (this.props.currentSong.title){
             let albumImageStyle = {
@@ -53,16 +51,20 @@ class NowPlaying extends React.Component {
 
         let playPause = this.props.isPlayingBool ? "fas fa-pause control-button" : "far fa-play-circle control-button";
 
-        if (this.refs.musicPlayer){
-            if (this.props.currentSong.track && this.refs.musicPlayer.src != this.props.currentSong.track){
-                this.refs.musicPlayer.src = this.props.currentSong.track;
+        if (this.audioObj && this.audioObj.readyState > -1){
+
+            if (!this.props.isPlayingBool && !this.audioObj.paused) {
+                this.audioObj.pause();
+            } else {
+                if (this.props.currentSong.track && !this.audioObj.src.includes(this.props.currentSong.track)){
+                    this.audioObj.src = this.props.currentSong.track;
+                }
+        
+                if (this.props.isPlayingBool && this.audioObj.paused){
+                    this.audioObj.play();
+                } 
             }
-    
-            if (this.props.isPlayingBool && !this.refs.musicPlayer.playing){
-                this.refs.musicPlayer.play();
-            } else if (!this.props.isPlayingBool && this.refs.musicPlayer.playing){
-                this.refs.musicPlayer.pause();
-            }
+
         }
 
         return (
@@ -100,8 +102,6 @@ class NowPlaying extends React.Component {
                     </div>
                 </div>
 
-                {/* Audio */}
-                <audio ref="musicPlayer"></audio>
             </div>
         )
     }
