@@ -85,6 +85,8 @@ class NowPlaying extends React.Component {
 
         }
 
+        let progressBarFillStyle = {width: `${this.state.currProgress}%`}
+
         return (
             <div className="now-playing-container">
                 <div className="now-playing-bar">
@@ -107,7 +109,13 @@ class NowPlaying extends React.Component {
                                     <SecsToMins totalSeconds={this.state.currTime}/>
                                 </div>
                                 <div className="progress-bar">
-                                    <div className="middle-align progress-bar-bg"></div>
+                                    <div className="middle-align progress-bar-bg">
+                                        <div className="progress-bar__fg_wrapper">
+                                            <div className="progress-bar__fg" style={progressBarFillStyle}>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="playback-bar-progress-time">
                                     <SecsToMins totalSeconds={this.state.duration} />
