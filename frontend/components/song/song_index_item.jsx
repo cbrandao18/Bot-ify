@@ -2,19 +2,22 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import SecondsToMins from './secondsToMins'
 import {connect} from 'react-redux'
-import { startPlaying, stopPlaying } from '../../actions/now_playing_actions'
+import { startPlaying, stopPlaying, setSongQueue } from '../../actions/now_playing_actions'
+import { fetchSong } from '../../actions/song_actions'
 
 
 const msp = (state) => {
     return {
-
+        ui: state.ui
     }
 }
 
 const mdp = (dispatch) => {
     return {
         startPlaying: () => dispatch(startPlaying()),
-        stopPlaying: () => dispatch(stopPlaying())
+        stopPlaying: () => dispatch(stopPlaying()),
+        fetchSong: (id) => dispatch(fetchSong(id)),
+        setSongQueue: (queue) => dispatch(setSongQueue(queue)),
     }
 }
 

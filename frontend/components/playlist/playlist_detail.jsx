@@ -42,14 +42,10 @@ class PlaylistDetail extends React.Component {
                         key={`song-${songId}`}
                         song={song}
                         artist={artist}
-                        isPlaying={this.props.isPlaying}
-                        setSongQueue={this.props.setSongQueue}
                         playlists={this.props.playlists}
                         addSongToPlaylist={this.props.addSongToPlaylist}
                         removeSongFromPlaylist={this.props.removeSongFromPlaylist}
                         playlistId={this.props.match.params.playlistId}
-                        fetchSong={this.props.fetchSong}
-                        ui={this.props.ui}
                     />
                 )
             })
