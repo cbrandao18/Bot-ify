@@ -9,7 +9,7 @@ const secsToMins = ({totalSeconds}) => {
         seconds = seconds.toString();
     }
     minutes = minutes.toString();
-
+    
     return (
         <span>
             {`${minutes}:${seconds}`}

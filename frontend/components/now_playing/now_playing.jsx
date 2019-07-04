@@ -1,10 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import SecsToMins from '../song/secondsToMins'
 
 class NowPlaying extends React.Component {
     constructor(props) {
         super(props)
         this.audioObj = new Audio();
+
+        this.state = {
+            duration: 0,
+            currTime: 0,
+            currProgress: 0
+        }
+        
     }
 
     componentDidMount(){
@@ -22,8 +30,18 @@ class NowPlaying extends React.Component {
         if (Object.keys(this.props.currentAlbum).length > 0) {
             this.props.fetchArtist(this.props.currentAlbum.artist_id)
         }
+
+        this.audioObj.addEventListener('timeupdate', this.updateProgressTime.bind(this))
     }
 
+    updateProgressTime(){
+        if (this.audioObj && !Number.isNaN(this.audioObj.duration)){
+            let duration = Math.round(this.audioObj.duration);
+            let currTime = Math.round(this.audioObj.currentTime);
+            let currProgress = (currTime * 100) / duration;
+            this.setState({duration, currTime, currProgress})
+        }
+    }
 
     togglePlayPause(){
         this.props.isPlaying()
@@ -85,11 +103,15 @@ class NowPlaying extends React.Component {
                                 <button><i className="fas fa-redo-alt control-button"></i></button>
                             </div>
                             <div className="playback-bar">
-                                <div className="playback-bar-progress-time"></div>
+                                <div className="playback-bar-progress-time">
+                                    <SecsToMins totalSeconds={this.state.currTime}/>
+                                </div>
                                 <div className="progress-bar">
                                     <div className="middle-align progress-bar-bg"></div>
                                 </div>
-                                <div className="playback-bar-progress-time"></div>
+                                <div className="playback-bar-progress-time">
+                                    <SecsToMins totalSeconds={this.state.duration} />
+                                </div>
                             </div>
 
                         </div>
