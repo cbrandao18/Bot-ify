@@ -65,10 +65,11 @@
     height: 32px;
     position: relative;
     font-size: 20px;
+    opacity: .6;
+    &:hover {
+        opacity: 1;
+    }
 }
-
-
-
 
 .playback-bar {
     width: 100%;
