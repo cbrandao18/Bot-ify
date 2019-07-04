@@ -1,6 +1,7 @@
 import React from 'react'
 import PlaylistIndexItems from '../library/playlist_index_items'
 import ArtistAlbumItems from '../library/albums/album_index_items'
+import ArtistIndexItems from '../library/artists/artist_index_items'
 import { fetchPlaylists } from '../../actions/playlist_actions'
 import { fetchAlbums } from '../../actions/album_actions'
 import { fetchArtists } from '../../actions/artist_actions'
@@ -44,6 +45,13 @@ class Home extends React.Component {
                     albums={this.props.albums}
                     artists={this.props.artists}
                 />
+
+                <h2>artists</h2>
+                <ArtistIndexItems
+                    artists={this.props.artists}
+                />
+
+                <h2></h2>
             </div>
         )
     }
