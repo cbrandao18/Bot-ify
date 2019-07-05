@@ -41,7 +41,7 @@ class Home extends React.Component {
     }
 
     render(){
-        if (this.state.loading) return <></>
+        if (this.state.loading) return <div className="home-container"></div>
         return (
             <div className="home-container">
                 <h2>{this.props.current_user.username}'s playlists</h2>
