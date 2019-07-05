@@ -25,11 +25,11 @@ class PlaylistDetail extends React.Component {
 
     render(){
         if (this.state.loading){
-            return (<></>)
+            return (<div className="playlist-detail-wrapper"></div>)
         }
 
         if (!this.props.playlist){
-            return (<></>)
+            return (<div className="playlist-detail-wrapper"></div>)
         }
 
         let songItems = <></>
