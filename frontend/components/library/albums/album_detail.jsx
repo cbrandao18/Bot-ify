@@ -18,15 +18,15 @@ class AlbumDetail extends React.Component {
 
     render(){
         if (!this.props.album) {
-            return <></>
+            return <div className="album-detail-wrapper"></div>
         }
 
         if (!this.props.songs && Object.keys(this.props.songs).length === 0){
-            return <></>
+            return <div className="album-detail-wrapper"></div>
         }
 
         if (this.state.loading){
-            return <></>
+            return <div className="album-detail-wrapper"></div>
         }
 
         let albumImageStyle = {

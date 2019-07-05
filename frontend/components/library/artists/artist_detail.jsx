@@ -10,7 +10,7 @@ class ArtistDetail extends React.Component {
 
     render(){
         if (!this.props.artist && !this.props.albums){
-            return <></>
+            return <div className="artist-detail-container"></div>
         }
 
         let artistAlbumItems = Object.keys(this.props.albums).map(albumId => {
