@@ -21,7 +21,7 @@ class SongIndex extends React.Component{
     render(){
 
         if (this.state.loading) {
-            return <></>
+            return <div className="song-index-container"></div>
         }
 
         let songItems = Object.keys(this.props.songs).map(songId => {
