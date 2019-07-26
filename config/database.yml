@@ -19,12 +19,14 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
+  url: <%= ENV['DATABASE_URL'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
 
 development:
   <<: *default
-  database: Botify_development
-
+  database: postgres
+  url: <%= ENV['DATABASE_URL'] %>
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -57,7 +59,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Botify_test
+  database: postgres
+  url: <%= ENV['DATABASE_URL'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +83,8 @@ test:
 #
 production:
   <<: *default
-  database: Botify_production
-  username: Botify
-  password: <%= ENV['BOTIFY_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  host: db
+  username: postgres
+  password:
