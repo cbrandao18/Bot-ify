@@ -9,6 +9,7 @@ RUN apk add --no-cache --update build-base \
 
 # environment vars must be included in heroku.yml and dockerfile
 ARG DATABASE_URL="postgres://postgres@db"
+ARG RAILS_MASTER_KEY=e0d4bda96c77ef54b954b6ea7fba7132
 ARG RAILS_ENV=production
 
 WORKDIR /myapp
