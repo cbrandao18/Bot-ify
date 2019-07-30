@@ -93,7 +93,6 @@ class NowPlaying extends React.Component {
                     b: this.audioObj.src.includes(this.props.currentSong.track)
                 })
                 if (this.props.currentSong.track && !this.audioObj.src.includes(this.props.currentSong.track)){
-                    console.log('entered')
                     this.audioObj.src = this.props.currentSong.track;
                 }
         
