@@ -10,18 +10,20 @@ class NowPlaying extends React.Component {
         this.state = {
             duration: 0,
             currTime: 0,
-            currProgress: 0
+            currProgress: 0,
+            loading: false
         }
         
     }
 
     componentDidMount(){
 
-        if (!this.props.currentSong.album_cover){
-            if (this.props.queue.length > 0){
-                this.props.fetchSong(this.props.queue[0])
-            }
-        }
+        // if (!this.props.currentSong.album_cover && !this.state.loading){
+        //     this.setState({loading: true})
+        //     if (this.props.queue.length > 0){
+        //         this.props.fetchSong(this.props.queue[0])
+        //     }
+        // }
 
         if (Object.keys(this.props.currentSong).length > 0){
             this.props.fetchAlbum(this.props.currentSong.album_id)
@@ -32,6 +34,18 @@ class NowPlaying extends React.Component {
         }
 
         this.audioObj.addEventListener('timeupdate', this.updateProgressTime.bind(this))
+        this.audioObj.addEventListener('ended', () => {
+            this.props.songEnded()
+        })
+    }
+
+    componentDidUpdate() {
+        if (!this.props.currentSong.track && !this.state.loading) {
+            this.setState({loading: true})
+            if (this.props.queue.length > 0) {
+                this.props.fetchSong(this.props.queue[0])
+            }
+        }
     }
 
     updateProgressTime(){
@@ -74,11 +88,17 @@ class NowPlaying extends React.Component {
             if (!this.props.isPlayingBool && !this.audioObj.paused) {
                 this.audioObj.pause();
             } else {
+                console.log({
+                    a: this.props.currentSong.track,
+                    b: this.audioObj.src.includes(this.props.currentSong.track)
+                })
                 if (this.props.currentSong.track && !this.audioObj.src.includes(this.props.currentSong.track)){
+                    console.log('entered')
                     this.audioObj.src = this.props.currentSong.track;
                 }
         
                 if (this.props.isPlayingBool && this.audioObj.paused){
+                    this.setState({loading: false})
                     this.audioObj.play();
                 } 
             }

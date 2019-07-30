@@ -3,13 +3,17 @@ import {
     RECEIVE_SONG_QUEUE,
     IS_PLAYING,
     START_PLAYING,
-    STOP_PLAYING
+    STOP_PLAYING,
+    SONG_ENDED
 } from '../actions/now_playing_actions';
 
 const uiReducer = (state = {isPlaying: false, queue: []}, action) => {
     switch (action.type) {
         case RECEIVE_SONG_QUEUE:
             return Object.assign({}, state, {queue: action.queue})
+        case SONG_ENDED:
+            let newQueue = state.queue.slice(1);
+            return Object.assign({}, state, {queue: newQueue})
         case START_PLAYING:
             return Object.assign({}, state, { isPlaying: true })
         case STOP_PLAYING:

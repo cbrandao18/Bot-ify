@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NowPlaying from './now_playing'
-import { isPlaying, setSongQueue } from '../../actions/now_playing_actions'
+import { isPlaying, setSongQueue, songEnded } from '../../actions/now_playing_actions'
 import { fetchSong } from '../../actions/song_actions'
 import { fetchAlbum } from '../../actions/album_actions'
 import { fetchArtist } from '../../actions/artist_actions'
@@ -31,6 +31,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchSong: (id) => dispatch(fetchSong(id)),
         fetchAlbum: (id) => dispatch(fetchAlbum(id)),
         fetchArtist: (id) => dispatch(fetchArtist(id)),
+        songEnded: () => dispatch(songEnded())
     }
 }
 
