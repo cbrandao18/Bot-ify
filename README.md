@@ -42,5 +42,5 @@ Botify is a full stack clone of Spotify. Create your own playlist, browse albums
 
 ## To Do
 * Auto-populate the queue of songs
-* Search funtionality
-* Follow funtionality
+* Search functionality
+* Follow functionality
