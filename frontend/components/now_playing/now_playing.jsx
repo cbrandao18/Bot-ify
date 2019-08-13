@@ -61,7 +61,16 @@ class NowPlaying extends React.Component {
         this.props.isPlaying()
     }
 
+    next() {
+        this.props.songEnded();
+        if (this.props.queue.length > 0) {
+            this.props.fetchSong(this.props.queue[0])
+            this.audioObj.src = this.props.currentSong.track;
+        }
+    }
+
     render() {
+
         let songInfo;
         if (this.props.currentSong.title){
             let albumImageStyle = {
@@ -88,10 +97,10 @@ class NowPlaying extends React.Component {
             if (!this.props.isPlayingBool && !this.audioObj.paused) {
                 this.audioObj.pause();
             } else {
-                console.log({
-                    a: this.props.currentSong.track,
-                    b: this.audioObj.src.includes(this.props.currentSong.track)
-                })
+                // console.log({
+                //     a: this.props.currentSong.track,
+                //     b: this.audioObj.src.includes(this.props.currentSong.track)
+                // })
                 if (this.props.currentSong.track && !this.audioObj.src.includes(this.props.currentSong.track)){
                     this.audioObj.src = this.props.currentSong.track;
                 }
@@ -120,7 +129,7 @@ class NowPlaying extends React.Component {
                                 <button
                                     onClick={this.togglePlayPause.bind(this)}
                                 ><i className={playPause}></i></button>
-                                <button><i className="fas fa-forward control-button"></i></button>
+                                <button onClick={this.next.bind(this)}><i className="fas fa-forward control-button"></i></button>
                                 <button><i className="fas fa-redo-alt control-button"></i></button>
                             </div>
                             <div className="playback-bar">
