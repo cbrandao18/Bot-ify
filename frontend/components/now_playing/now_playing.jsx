@@ -90,7 +90,7 @@ class NowPlaying extends React.Component {
             if (!this.props.isPlayingBool && !this.audioObj.paused) {
                 this.audioObj.pause();
             } else {
-                
+
                 if (this.props.currentSong.track && !this.audioObj.src.includes(this.props.currentSong.track)){
                     this.audioObj.src = this.props.currentSong.track;
                 }
@@ -114,13 +114,13 @@ class NowPlaying extends React.Component {
                     <div className="now-playing-bar-center">
                         <div className="player-controls">
                             <div className="play-control-buttons">
-                                <button><i className="fas fa-random control-button"></i></button>
+                                {/* <button><i className="fas fa-random control-button"></i></button> */}
                                 <button><i className="fas fa-backward control-button"></i></button>
                                 <button
                                     onClick={this.togglePlayPause.bind(this)}
                                 ><i className={playPause}></i></button>
                                 <button onClick={this.next.bind(this)}><i className="fas fa-forward control-button"></i></button>
-                                <button><i className="fas fa-redo-alt control-button"></i></button>
+                                {/* <button><i className="fas fa-redo-alt control-button"></i></button> */}
                             </div>
                             <div className="playback-bar">
                                 <div className="playback-bar-progress-time">
