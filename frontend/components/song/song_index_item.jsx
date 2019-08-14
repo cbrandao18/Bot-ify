@@ -35,7 +35,8 @@ class SongIndexItem extends React.Component {
 
     togglePlayAndSetQueue(thisSongIsPlaying){
         if (!thisSongIsPlaying){
-            this.props.setSongQueue([this.props.song.id])
+            // this.props.setSongQueue([this.props.song.id])
+            this.props.setSongQueue(this.props.queue)
             this.props.fetchSong(this.props.song.id)
             this.props.startPlaying();
         }  else {
