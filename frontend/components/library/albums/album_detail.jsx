@@ -33,14 +33,16 @@ class AlbumDetail extends React.Component {
             backgroundImage: `url('${this.props.album.cover}')`
         }
         
-        let songItems = Object.keys(this.props.songs).map(songId => {
+        let songItems = Object.keys(this.props.songs).map((songId, index) => {
             let song = this.props.songs[songId];
             let artist = this.props.artist
+            let queue = Object.keys(this.props.songs).slice(index)
             return (
                 <SongIndexItem 
                     key={`song-${songId}`} 
                     song={song} 
                     artist={artist}
+                    queue={queue}
                     isPlaying={this.props.isPlaying}
                     setSongQueue={this.props.setSongQueue}
                     playlists={this.props.playlists}
