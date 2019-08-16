@@ -38,13 +38,14 @@ class PlaylistDetail extends React.Component {
                 let song = this.props.songs[songId];
                 let album = this.props.albums[song.album_id]
                 let artist = this.props.artists[album.artist_id]
-                let queue = this.props.playlist.song_ids.slice(index);
+                let queue = this.props.playlist.song_ids;
                 return (
                     <SongIndexItem
                         key={`song-${songId}`}
                         song={song}
                         artist={artist}
                         queue={queue}
+                        queueHead={index}
                         playlists={this.props.playlists}
                         addSongToPlaylist={this.props.addSongToPlaylist}
                         removeSongFromPlaylist={this.props.removeSongFromPlaylist}

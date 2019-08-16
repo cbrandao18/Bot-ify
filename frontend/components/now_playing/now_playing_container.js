@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
     let currentSongAlbum = {};
     let currentArtist = {};
     if (Object.keys(state.ui.queue).length !== 0){
-        let currentSongId = state.ui.queue[0];
+        let currentSongId = state.ui.queue[state.ui.queueHead];
         currentSong = state.entities.songs[currentSongId];
         currentSongAlbum = state.entities.albums[currentSong.album_id]
         currentArtist = state.entities.artists[currentSongAlbum.artist_id]
@@ -20,7 +20,8 @@ const mapStateToProps = (state) => {
         queue: state.ui.queue,
         currentSong: currentSong,
         currentAlbum: currentSongAlbum,
-        currentArtist: currentArtist
+        currentArtist: currentArtist,
+        queueHead: state.ui.queueHead
     }
 }
 

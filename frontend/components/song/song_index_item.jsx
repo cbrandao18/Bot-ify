@@ -17,7 +17,7 @@ const mdp = (dispatch) => {
         startPlaying: () => dispatch(startPlaying()),
         stopPlaying: () => dispatch(stopPlaying()),
         fetchSong: (id) => dispatch(fetchSong(id)),
-        setSongQueue: (queue) => dispatch(setSongQueue(queue)),
+        setSongQueue: (queue, queueHead) => dispatch(setSongQueue(queue, queueHead)),
     }
 }
 
@@ -36,7 +36,7 @@ class SongIndexItem extends React.Component {
     togglePlayAndSetQueue(thisSongIsPlaying){
         if (!thisSongIsPlaying){
             // this.props.setSongQueue([this.props.song.id])
-            this.props.setSongQueue(this.props.queue)
+            this.props.setSongQueue(this.props.queue, this.props.queueHead)
             this.props.fetchSong(this.props.song.id)
             this.props.startPlaying();
         }  else {
@@ -89,7 +89,7 @@ class SongIndexItem extends React.Component {
             }
         }
 
-        const thisSongIsPlaying = this.props.ui.isPlaying && this.props.ui.queue[0] === this.props.song.id
+        const thisSongIsPlaying = this.props.ui.isPlaying && this.props.ui.queue[this.props.ui.queueHead] === this.props.song.id
         let tracklistRowClass = thisSongIsPlaying ? "tracklist-row active" : "tracklist-row"
         let playPauseIconClass = thisSongIsPlaying ? "fas fa-pause" : "fas tracklist-icon"
 

@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             session: { id: window.currentUser.id },
             ui: {
                 isPlaying: false,
-                queue: []
+                queue: [],
+                queueHead: 0
             }
         };
         store = configureStore(preloadedState);

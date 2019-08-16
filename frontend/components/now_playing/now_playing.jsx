@@ -35,7 +35,7 @@ class NowPlaying extends React.Component {
         if (!this.props.currentSong.track && !this.loading) {
             this.loading = true;
             if (this.props.queue.length > 0) {
-                this.props.fetchSong(this.props.queue[0])
+                this.props.fetchSong(this.props.queue[this.props.queueHead])
             }
         }
     }
@@ -56,7 +56,7 @@ class NowPlaying extends React.Component {
     next() {
         this.props.songEnded();
         if (this.props.queue.length > 0) {
-            this.props.fetchSong(this.props.queue[0])
+            this.props.fetchSong(this.props.queue[this.props.queueHead])
             this.audioObj.src = this.props.currentSong.track;
         }
     }

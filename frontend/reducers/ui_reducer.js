@@ -7,13 +7,12 @@ import {
     SONG_ENDED
 } from '../actions/now_playing_actions';
 
-const uiReducer = (state = {isPlaying: false, queue: []}, action) => {
+const uiReducer = (state = {isPlaying: false, queue: [], queueHead: 0}, action) => {
     switch (action.type) {
         case RECEIVE_SONG_QUEUE:
-            return Object.assign({}, state, {queue: action.queue})
+            return Object.assign({}, state, {queue: action.queue, queueHead: action.queueHead})
         case SONG_ENDED:
-            let newQueue = state.queue.slice(1);
-            return Object.assign({}, state, {queue: newQueue})
+            return Object.assign({}, state, { queueHead: state.queueHead + 1})
         case START_PLAYING:
             return Object.assign({}, state, { isPlaying: true })
         case STOP_PLAYING:

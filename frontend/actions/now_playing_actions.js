@@ -10,10 +10,11 @@ export const isPlaying = () => {
     }
 }
 
-export const setSongQueue = (queue) => {
+export const setSongQueue = (queue, queueHead) => {
     return {
         type: RECEIVE_SONG_QUEUE,
-        queue
+        queue,
+        queueHead
     }
 }
 

@@ -36,13 +36,14 @@ class AlbumDetail extends React.Component {
         let songItems = Object.keys(this.props.songs).map((songId, index) => {
             let song = this.props.songs[songId];
             let artist = this.props.artist
-            let queue = Object.keys(this.props.songs).slice(index).map(Number)
+            let queue = Object.keys(this.props.songs).map(Number)
             return (
                 <SongIndexItem 
                     key={`song-${songId}`} 
                     song={song} 
                     artist={artist}
                     queue={queue}
+                    queueHead={index}
                     isPlaying={this.props.isPlaying}
                     setSongQueue={this.props.setSongQueue}
                     playlists={this.props.playlists}
