@@ -24,15 +24,17 @@ class SongIndex extends React.Component{
             return <div className="song-index-container"></div>
         }
 
-        let songItems = Object.keys(this.props.songs).map(songId => {
+        let songItems = Object.keys(this.props.songs).map((songId, index) => {
             let song = this.props.songs[songId];
             let album = this.props.albums[song.album_id];
             let artist = this.props.artists[album.artist_id];
+            let queue = Object.keys(this.props.songs).slice(index);
             return (
                 <SongIndexItem
                     key={`song-${songId}`}
                     song={song}
                     artist={artist}
+                    queue={queue}
                     isPlaying={this.props.isPlaying}
                     setSongQueue={this.props.setSongQueue}
                     playlists={this.props.playlists}
