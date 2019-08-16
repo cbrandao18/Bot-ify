@@ -3,10 +3,17 @@ export const RECEIVE_SONG_QUEUE = 'RECEIVE_SONG_QUEUE'
 export const START_PLAYING = 'START_PLAYING'
 export const STOP_PLAYING = 'STOP_PLAYING'
 export const SONG_ENDED = 'SONG_ENDED'
+export const SONG_BACK = 'SONG_BACK'
 
 export const isPlaying = () => {
     return{
         type: IS_PLAYING
+    }
+}
+
+export const skipBackOneSong = () => {
+    return {
+        type: SONG_BACK
     }
 }
 

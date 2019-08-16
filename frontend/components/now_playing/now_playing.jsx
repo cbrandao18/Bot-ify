@@ -61,6 +61,14 @@ class NowPlaying extends React.Component {
         }
     }
 
+    back(){
+        this.props.skipBackOneSong();
+        if (this.props.queue.length > 0) {
+            this.props.fetchSong(this.props.queue[this.props.queueHead])
+            this.audioObj.src = this.props.currentSong.track;
+        }
+    }
+
     render() {
 
         let songInfo;
@@ -115,7 +123,7 @@ class NowPlaying extends React.Component {
                         <div className="player-controls">
                             <div className="play-control-buttons">
                                 {/* <button><i className="fas fa-random control-button"></i></button> */}
-                                <button><i className="fas fa-backward control-button"></i></button>
+                                <button onClick={this.back.bind(this)}><i className="fas fa-backward control-button"></i></button>
                                 <button
                                     onClick={this.togglePlayPause.bind(this)}
                                 ><i className={playPause}></i></button>

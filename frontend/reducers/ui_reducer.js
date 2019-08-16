@@ -4,7 +4,8 @@ import {
     IS_PLAYING,
     START_PLAYING,
     STOP_PLAYING,
-    SONG_ENDED
+    SONG_ENDED, 
+    SONG_BACK
 } from '../actions/now_playing_actions';
 
 const uiReducer = (state = {isPlaying: false, queue: [], queueHead: 0}, action) => {
@@ -13,6 +14,9 @@ const uiReducer = (state = {isPlaying: false, queue: [], queueHead: 0}, action) 
             return Object.assign({}, state, {queue: action.queue, queueHead: action.queueHead})
         case SONG_ENDED:
             return Object.assign({}, state, { queueHead: state.queueHead + 1})
+        case SONG_BACK:
+            let newQueueHead = state.queueHead - 1 < 0 ? 0 : state.queueHead - 1;
+            return Object.assign({}, state, { queueHead: newQueueHead })
         case START_PLAYING:
             return Object.assign({}, state, { isPlaying: true })
         case STOP_PLAYING:
