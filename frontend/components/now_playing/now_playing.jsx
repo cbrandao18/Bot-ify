@@ -11,9 +11,8 @@ class NowPlaying extends React.Component {
             duration: 0,
             currTime: 0,
             currProgress: 0,
-            loading: false
         }
-        
+        this.loading = false;
     }
 
     componentDidMount(){
@@ -33,8 +32,8 @@ class NowPlaying extends React.Component {
     }
 
     componentDidUpdate() {
-        if (!this.props.currentSong.track && !this.state.loading) {
-            this.setState({loading: true})
+        if (!this.props.currentSong.track && !this.loading) {
+            this.loading = true;
             if (this.props.queue.length > 0) {
                 this.props.fetchSong(this.props.queue[0])
             }
@@ -96,7 +95,7 @@ class NowPlaying extends React.Component {
                 }
         
                 if (this.props.isPlayingBool && this.audioObj.paused){
-                    this.setState({loading: false})
+                    this.loading = false;
                     this.audioObj.play()
                     .catch(err => {})
                 } 
