@@ -97,7 +97,8 @@ class NowPlaying extends React.Component {
         
                 if (this.props.isPlayingBool && this.audioObj.paused){
                     this.setState({loading: false})
-                    this.audioObj.play();
+                    this.audioObj.play()
+                    .catch(err => {})
                 } 
             }
 
