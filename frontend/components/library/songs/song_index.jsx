@@ -28,7 +28,7 @@ class SongIndex extends React.Component{
             let song = this.props.songs[songId];
             let album = this.props.albums[song.album_id];
             let artist = this.props.artists[album.artist_id];
-            let queue = Object.keys(this.props.songs).slice(index);
+            let queue = Object.keys(this.props.songs).slice(index).map(Number);
             return (
                 <SongIndexItem
                     key={`song-${songId}`}
