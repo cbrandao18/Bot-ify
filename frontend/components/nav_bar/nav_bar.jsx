@@ -16,10 +16,10 @@ const NavBar = ({ current_user, logout }) => {
                     <i className="fas fa-home"></i>
                     <span>Home</span>
                 </NavLink>
-                <NavLink className="nav-bar-link" to={'/browse/search'}>
+                {/* <NavLink className="nav-bar-link" to={'/browse/search'}>
                     <i className="fas fa-search"></i>
                     <span>Search</span>
-                </NavLink>
+                </NavLink> */}
                 <NavLink className="nav-bar-link" to={'/browse/library/playlists'}>
                     <i className="fas fa-music"></i>
                     <span>Your Library</span>

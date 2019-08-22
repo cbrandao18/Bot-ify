@@ -5,12 +5,13 @@ import SecsToMins from '../song/secondsToMins'
 class NowPlaying extends React.Component {
     constructor(props) {
         super(props)
-        this.audioObj = new Audio();
+        window.debugAudioObj = this.audioObj = new Audio();
 
         this.state = {
             duration: 0,
             currTime: 0,
             currProgress: 0,
+            volume: 1
         }
         this.loading = false;
     }
@@ -29,6 +30,7 @@ class NowPlaying extends React.Component {
         this.audioObj.addEventListener('ended', () => {
             this.props.songEnded()
         })
+        this.audioObj.addEventListener('volumechange', this.updateVolume.bind(this))
     }
 
     componentDidUpdate() {
@@ -67,6 +69,16 @@ class NowPlaying extends React.Component {
             this.props.fetchSong(this.props.queue[this.props.queueHead])
             this.audioObj.src = this.props.currentSong.track;
         }
+    }
+
+    updateVolume(){
+        this.setState({volume: this.audioObj.volume})
+        console.log(this.audioObj.volume)
+    }
+
+    setVolume(e){
+        console.log(e.clientX)
+        console.log(this);
     }
 
     render() {
@@ -111,7 +123,8 @@ class NowPlaying extends React.Component {
 
         }
 
-        let progressBarFillStyle = {width: `${this.state.currProgress}%`}
+        let progressBarFillStyle = { width: `${this.state.currProgress}%` }
+        let volumeBarFillStyle = { width: `${this.state.volume * 100}%`}
 
         return (
             <div className="now-playing-container">
@@ -137,9 +150,7 @@ class NowPlaying extends React.Component {
                                 <div className="progress-bar">
                                     <div className="middle-align progress-bar-bg">
                                         <div className="progress-bar__fg_wrapper">
-                                            <div className="progress-bar__fg" style={progressBarFillStyle}>
-
-                                            </div>
+                                            <div className="progress-bar__fg" style={progressBarFillStyle}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -152,8 +163,12 @@ class NowPlaying extends React.Component {
                     </div>
                     <div className="now-playing-bar-right">
                         <i className="fas fa-volume-down"></i>
-                        <div className="progress-bar">
-                            <div className="middle-align progress-bar-bg"></div>
+                        <div className="progress-bar" onClick={ (e) => this.setVolume(e)}>
+                            <div className="middle-align progress-bar-bg">
+                                <div className="progress-bar__fg_wrapper">
+                                    <div className="progress-bar__fg" style={volumeBarFillStyle}></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
