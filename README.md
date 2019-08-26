@@ -37,7 +37,7 @@ Botify is a full stack clone of Spotify. Create your own playlist, browse albums
 * Browse albums, artists, and songs
 ![Browse](./app/assets/images/screenshots/browse.png)
 
-* Stay listening to your current song throughout navigation. Click back and next to go to the next song in the queue!
+* Stay listening to your current song throughout navigation. Click back and next to traverse through the song queue!
 ![Playbar](./app/assets/images/screenshots/playbar.gif)
 
 ## To Do
