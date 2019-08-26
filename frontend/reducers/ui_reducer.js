@@ -13,10 +13,11 @@ const uiReducer = (state = {isPlaying: false, queue: [], queueHead: 0}, action) 
         case RECEIVE_SONG_QUEUE:
             return Object.assign({}, state, {queue: action.queue, queueHead: action.queueHead})
         case SONG_ENDED:
-            return Object.assign({}, state, { queueHead: state.queueHead + 1})
+            let newQueueHeadNext = state.queueHead + 1 === state.queue.length ? 0 : state.queueHead + 1
+            return Object.assign({}, state, { queueHead: newQueueHeadNext})
         case SONG_BACK:
-            let newQueueHead = state.queueHead - 1 < 0 ? 0 : state.queueHead - 1;
-            return Object.assign({}, state, { queueHead: newQueueHead })
+            let newQueueHeadBack = state.queueHead - 1 < 0 ? state.queue.length - 1 : state.queueHead - 1;
+            return Object.assign({}, state, { queueHead: newQueueHeadBack })
         case START_PLAYING:
             return Object.assign({}, state, { isPlaying: true })
         case STOP_PLAYING:
