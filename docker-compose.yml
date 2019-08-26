@@ -26,4 +26,4 @@ services:
       - ".:/usr/src/app"
       - "/usr/src/app/node_modules"
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
